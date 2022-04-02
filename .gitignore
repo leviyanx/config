@@ -4,9 +4,12 @@
 # But not these files...
 !.gitignore
 !README.md
+!.zshrc
+!.p10k.zsh
 
 # ...even if they are in subdirectories
 #!*/
+!.config/alacritty/
 
 # if the files to be tracked are in subdirectories
 #!*/a/b/file1.txt
