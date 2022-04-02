@@ -1,16 +1,15 @@
-# Ignore everything
-*
+# Blacklist files/folders in same directory as the .gitignore file
+/*
 
-# But not these files...
+# Whitelist some files
 !.gitignore
 !README.md
 !.zshrc
 !.p10k.zsh
 
-# ...even if they are in subdirectories
-#!*/
+# Whitelist .config/alacritty/
+# trailing "/" is optional for folders, may match file though.
+# "/" is NOT optional when followed by a *
+!.config/
+.config/*
 !.config/alacritty/
-
-# if the files to be tracked are in subdirectories
-#!*/a/b/file1.txt
-#!*/a/b/c/*
