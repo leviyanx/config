@@ -9,3 +9,22 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Aliases
+# Simple Aliases
+alias gs="git status"
+alias c="clear"
+# Global Aliases
+
+# Para Aliases
+# Git add, a command example:
+#   $ gd README.md
+gd() {
+    git add $1
+}
+# Git commit, a command example: 
+#   $ gc "This is a commit"
+gc() {
+    git commit -m $1
+}
+
