@@ -4,12 +4,17 @@
 # Whitelist some files
 !.gitignore
 !README.md
+# Zsh
 !.zshrc
+# P10K
 !.p10k.zsh
+# Vim
+!.vimrc
 
-# Whitelist .config/alacritty/
+# Whitelist
 # trailing "/" is optional for folders, may match file though.
 # "/" is NOT optional when followed by a *
+# Alacritty
 !.config/
 .config/*
 !.config/alacritty/

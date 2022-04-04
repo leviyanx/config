@@ -5,3 +5,5 @@ Zsh: `.zshrc`
 Powerlevel10k: `.zshrc` and `.p10k.zsh`
 
 Alacritty: `~/.config/alacritty`
+
+Vim: `.vimrc`
