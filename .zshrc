@@ -14,6 +14,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # Simple Aliases
 alias gs="git status"
 alias c="clear"
+alias v="vim"
 # Global Aliases
 
 # Para Aliases
