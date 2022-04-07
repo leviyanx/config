@@ -20,7 +20,7 @@ alias v="vim"
 # Para Aliases
 # Git add, a command example:
 #   $ gd README.md
-gd() {
+ga() {
     git add $1
 }
 # Git commit, a command example: 
