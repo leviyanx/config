@@ -83,3 +83,5 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+" Not extend tab to 4 spaces in Makefile
+autocmd FileType make setlocal noexpandtab
