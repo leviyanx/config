@@ -15,6 +15,9 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 alias gs="git status"
 alias c="clear"
 alias v="vim"
+## MacOS
+alias bs="brew search"
+alias bi="brew install"
 # Global Aliases
 
 # Para Aliases
