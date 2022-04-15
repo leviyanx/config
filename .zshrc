@@ -32,3 +32,5 @@ gc() {
     git commit -m $1
 }
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
