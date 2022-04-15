@@ -128,7 +128,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end
 " ----------- Add Plugin Declaration Here ----------
 " 1 Deoplete(autocomplete)
-" 1.1 Require vim8 and python 3.6.1
+" 1.1 Require vim8 and python 3.6.1 and config vim to support python
 " 1.2 following settings
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'roxma/nvim-yarp'
@@ -183,6 +183,30 @@ nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
 nmap <leader>4 <Plug>AirlineSelectTab4
 nmap <leader>5 <Plug>AirlineSelectTab5
+
+" 5 Rust-specific plugin
+" 5.1 Rust.vim
+Plugin 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1 " automatically formatted for standard style
+" 5.2 Syntastic (Check syntax error)
+Plugin 'vim-syntastic/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+" 5.3 Vim Racer (rust smart autocomplete)
+Plugin 'racer-rust/vim-racer'
+" 5.3.1 install Racer
+" 5.3.2 set plugin
+let g:racer_cmd = "/User/leviyan/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+augroup Racer
+    autocmd!
+    autocmd FileType rust nmap <buffer> gd <Plug>(rust-def)
+    autocmd FileType rust nmap <buffer> gs <Plug>(rust-def-split)
+    autocmd FileType rust nmap <buffer> gx <Plug>(rust-def-vertical)
+    autocmd FileType rust nmap <buffer> gt <Plug>(rust-def-tab)
+    autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+augroup END
 
 " All of your Plugins must be added before the following line
 call vundle#end()
