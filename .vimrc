@@ -208,7 +208,18 @@ augroup Racer
     autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
 augroup END
 
+" 6 Theme plugin 
+"   Not use vundle to install theme, but manually install it
+"   These comment as a list to record themes I like.
+" 6.1 Dracula-theme
+" 6.2 OneDark
+" 6.3 everforest
+" 6.4 gruvbox-material
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
 
+" theme
+set background=dark " for everforest or gruvbox-material theme
+colorscheme gruvbox-material

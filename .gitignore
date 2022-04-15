@@ -18,3 +18,20 @@
 !.config/
 .config/*
 !.config/alacritty/
+#  Vim theme
+!.vim/
+.vim/*
+!.vim/colors
+!.vim/after
+!.vim/autoload
+.vim/autoload/*
+!.vim/autoload/airline
+!.vim/autoload/lightline
+!.vim/autoload/dracula.vim
+!.vim/autoload/onedark.vim
+!.vim/autoload/everforest.vim
+!.vim/autoload/gruvbox_material.vim
+
+
+
+
