@@ -7,6 +7,18 @@
 " `vim -u foo`).
 set nocompatible
 
+filetype off " Vundle required
+
+" Functions
+" Determinte environment we are runnning on(Win or Linux or Darwin) 
+function! WhichEnv() abort
+    if has('win64') || has('win32') || has('win16')
+        return 'WINDOWS'
+    else
+        return toupper(substitute(system('uname'), '\n', '', ''))
+    endif
+endfunction
+
 " Turn on syntax highlighting.
 syntax on
 
@@ -67,17 +79,26 @@ nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
 nnoremap <Down>  :echoe "Use j"<CR>
-
 " ...and in insert mode
 inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
 " ESC
 inoremap kj <ESC> 
 
 " Map leader to comma
 let mapleader = ","
+
+" Split screening
+"   Easy split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
 
 " Map Tab to 4 Space
 filetype plugin indent on
@@ -89,3 +110,54 @@ set shiftwidth=4
 set expandtab
 " Not extend tab to 4 spaces in Makefile
 autocmd FileType make setlocal noexpandtab
+
+" Set python
+if (WhichEnv() =~# 'DARWIN')
+    " MacOS
+    let g:python3_host_prog='/usr/bin/python3'
+    let g:python_host_prog='/usr/bin/python'
+endif
+
+" Firstly, execute this command: 'git clone https://github.com/VundleVim/Vundle.vim.git
+"   ~/.vim/bundle/Vundle.vim'
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Let Vundle manage Vundle 
+Plugin 'VundleVim/Vundle.vim'
+
+" Keep Plugin commands between vundle#begin/end
+" ----------- Add Plugin Declaration Here ----------
+" 1 Deoplete(autocomplete)
+" 1.1 Require vim8 and python 3.6.1
+" 1.2 following settings
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+let g:deoplete#enable_at_startup=1
+"   deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" 2 fzf(Fuzzy file finder)
+" 2.1 Run this in your shell: 
+"   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+"   ~/.fzf/install
+" 2.2 following setting
+set rtp+=~/.fzf
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+"   This is the default extra key bindings
+let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-x': 'split',
+    \ 'ctrl-v': 'vsplit',}
+"   Default fzf layout
+"   - down / up / left / right
+let g:fzf_layout = {'down': '~40%'}
+"   ', space' to open fzf file finder
+nnoremap <silent> <leader><space> :Files<CR>
+
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+

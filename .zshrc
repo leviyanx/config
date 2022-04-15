@@ -10,6 +10,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Set Path so that '/usr/local/bin' appears before '/usr/bin'
+export PATH="/usr/local/bin:$PATH" 
+# python version
+export PATH="/usr/local/opt/python@3.10/bin:$PATH" 
+
 # Aliases
 # Simple Aliases
 alias gs="git status"
