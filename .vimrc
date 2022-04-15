@@ -1,7 +1,6 @@
 " Vim is based on Vi. Setting `nocompatible` switches from the default
 " Vi-compatibility mode and enables useful Vim functionality. This
-" configuration option turns out not to be necessary for the file named
-" '~/.vimrc', because Vim automatically enters nocompatible mode if that file
+" configuration option turns out not to be necessary for the file named " '~/.vimrc', because Vim automatically enters nocompatible mode if that file
 " is present. But we're including it here just in case this config file is
 " loaded some other way (e.g. saved as `foo`, and then Vim started with
 " `vim -u foo`).
@@ -156,6 +155,16 @@ let g:fzf_action = {
 let g:fzf_layout = {'down': '~40%'}
 "   ', space' to open fzf file finder
 nnoremap <silent> <leader><space> :Files<CR>
+
+" 3 ag(Silver Searcher)
+" 3.1 install ag
+" 3.2 following settings
+Plugin 'mileszs/ack.vim'
+let g:ackprg = 'ag -vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
 
 " All of your Plugins must be added before the following line
 call vundle#end()
