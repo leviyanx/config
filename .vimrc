@@ -116,8 +116,10 @@ autocmd FileType make setlocal noexpandtab
 " MacOS
 if env == 'DARWIN'
     " Set python
-    let g:python3_host_prog='/usr/bin/python3'
+    let g:python_host_skip_check = 1 " skip check to speed up loading
     let g:python_host_prog='/usr/bin/python'
+    let g:python3_host_skip_check = 1 " skip check to speed up loading
+    let g:python3_host_prog='/usr/bin/python3'
     " racer cmd path
     let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
 elseif env == "WINDOWS"
