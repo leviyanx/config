@@ -9,7 +9,7 @@ set nocompatible
 filetype off " Vundle required
 
 " Functions
-" Determinte environment we are runnning on(Win or Linux or Darwin) 
+" 1. Determinte environment we are runnning on(Win or Linux or Darwin) 
 function! WhichEnv() abort
     if has('win64') || has('win32') || has('win16')
         return 'WINDOWS'
@@ -17,6 +17,8 @@ function! WhichEnv() abort
         return toupper(substitute(system('uname'), '\n', '', ''))
     endif
 endfunction
+" Execuate this function only once to reduce start time
+let env = WhichEnv()
 
 " Turn on syntax highlighting.
 syntax on
@@ -110,15 +112,19 @@ set expandtab
 " Not extend tab to 4 spaces in Makefile
 autocmd FileType make setlocal noexpandtab
 
-" Set python
-if (WhichEnv() =~# 'DARWIN')
-    " MacOS
+" Specific platform setting
+" MacOS
+if env == 'DARWIN'
+    " Set python
     let g:python3_host_prog='/usr/bin/python3'
     let g:python_host_prog='/usr/bin/python'
+    " racer cmd path
+    let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
+elseif env == "WINDOWS"
+    " Set python
+    " racer cmd path
 endif
 
-" Firstly, execute this command: 'git clone https://github.com/VundleVim/Vundle.vim.git
-"   ~/.vim/bundle/Vundle.vim'
 " START - Setting up Vundle
 " Automatic Vundle installation on first run of Vim
 let hasVundle = 1
@@ -129,6 +135,27 @@ if !filereadable(vundle_readme)
     silent !mkdir -p ~/vim/bundle
     silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
     let hasVundle = 0 " Give the code below a sign to install plugin
+endif
+
+" Automatic install some necessary software
+if hasVundle == 0
+    if env == "DARWIN"
+        " Install fzf
+        echo "Installing fzf..."
+        echo ""
+        silent !git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        silent !~/.fzf/install
+        " Install ag
+        echo "Installing ag..."
+        echo ""
+        silent !brew install the_silver_searcher
+    elseif env == "WINDOWS"
+        echo "Installing fzf..."
+        echo ""
+        silent !git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        silent !~/.fzf/install
+        " Install ag
+    endif
 endif
 
 " Set the runtime path to include Vundle and initialize
@@ -150,9 +177,7 @@ let g:deoplete#enable_at_startup=1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " 2 fzf(Fuzzy file finder)
-" 2.1 Run this in your shell: 
-"   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-"   ~/.fzf/install
+" 2.1 Install fzf (above)
 " 2.2 following setting
 set rtp+=~/.fzf
 Plugin 'junegunn/fzf'
@@ -169,8 +194,8 @@ let g:fzf_layout = {'down': '~40%'}
 nnoremap <silent> <leader><space> :Files<CR>
 
 " 3 ag(Silver Searcher)
-" 3.1 install ag
-" 3.2 following settings
+" 3.1 install ag (above)
+" 3.2 ag settings
 Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag -vimgrep --smart-case'
 cnoreabbrev ag Ack
@@ -207,9 +232,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 " 5.3 Vim Racer (rust smart autocomplete)
 Plugin 'racer-rust/vim-racer'
-" 5.3.1 install Racer
+" 5.3.1 install Racer (https://github.com/racer-rust/racer )
 " 5.3.2 set plugin
-let g:racer_cmd = "/User/leviyan/.cargo/bin/racer"
+let g:racer_cmd = cross_platform_racer_cmd
 let g:racer_experimental_completer = 1
 augroup Racer
     autocmd!
