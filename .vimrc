@@ -119,10 +119,22 @@ endif
 
 " Firstly, execute this command: 'git clone https://github.com/VundleVim/Vundle.vim.git
 "   ~/.vim/bundle/Vundle.vim'
+" START - Setting up Vundle
+" Automatic Vundle installation on first run of Vim
+let hasVundle = 1
+let vundle_readme = expand('~/.vim/bundle/Vundle.vim/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle..."
+    echo ""
+    silent !mkdir -p ~/vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+    let hasVundle = 0 " Give the code below a sign to install plugin
+endif
+
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" Let Vundle manage Vundle 
+" Let Vundle manage Vundle, required 
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end
@@ -216,9 +228,18 @@ augroup END
 " 6.3 everforest
 " 6.4 gruvbox-material
 
+" Automatic installing plugins
+if hasVundle == 0
+    echo "Installing plugins, please ignore some key map error messages"
+    echo ""
+    :source $MYVIMRC
+    :PluginInstall
+endif
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
+" End - Setting up Vundle
 
 " theme
 set background=dark " for everforest or gruvbox-material theme
