@@ -135,25 +135,17 @@ endif
 let hasVundle = 1
 let vundle_readme = expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
-    echo "Installing Vundle..."
-    echo ""
-    silent !mkdir -p ~/vim/bundle
-    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
-    let hasVundle = 0 " Give the code below a sign to install plugin
-endif
-
-" Automatic install some necessary software
-if hasVundle == 0
+    " Automatic install some necessary software
     if env == "DARWIN"
-        " Install fzf
-        echo "Installing fzf..."
-        echo ""
-        silent !git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-        silent !~/.fzf/install
-        " Install ag
-        echo "Installing ag..."
-        echo ""
-        silent !brew install the_silver_searcher
+       " Install fzf
+       echo "Installing fzf..."
+       echo ""
+       silent !git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+       silent !~/.fzf/install
+       " Install ag
+       echo "Installing ag..."
+       echo ""
+       silent !brew install the_silver_searcher
     elseif env == "WINDOWS"
         echo "Installing fzf..."
         echo ""
@@ -161,6 +153,12 @@ if hasVundle == 0
         silent !~/.fzf/install
         " Install ag
     endif
+    " Automatic install Vundle
+    echo "Installing Vundle..."
+    echo ""
+    silent !mkdir -p ~/vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+    let hasVundle = 0 " Give the code below a sign to install plugin
 endif
 
 " Set the runtime path to include Vundle and initialize
