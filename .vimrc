@@ -130,11 +130,11 @@ elseif env == "Linux"
     let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
 endif
 
-" START - Setting up Vundle
-" Automatic Vundle installation on first run of Vim
-let hasVundle = 1
-let vundle_readme = expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
+" START - Setting up Vim-Plug
+" Automatically install Vim-Plug on first run of Vim
+let hasVimPlug = 1
+let vimPlugPath = expand('~/.vim/autoload/plug.vim')
+if !filereadable(vimPlugPath)
     " Automatic install some necessary software
     if env == "DARWIN"
        " Install fzf
@@ -153,28 +153,24 @@ if !filereadable(vundle_readme)
         silent !~/.fzf/install
         " Install ag
     endif
-    " Automatic install Vundle
-    echo "Installing Vundle..."
+    " Automatic install Vim Plug
+    echo "Installing Vim Plug..."
     echo ""
-    silent !mkdir -p ~/vim/bundle
-    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
-    let hasVundle = 0 " Give the code below a sign to install plugin
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    let hasVimPlug = 0 " Give the code below a sign to install plugin
 endif
 
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" Let Vundle manage Vundle, required 
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Keep Plugin commands between vundle#begin/end
 " ----------- Add Plugin Declaration Here ----------
 " 1 Deoplete(autocomplete)
 " 1.1 Require vim8 and python 3.6.1 and config vim to support python
 " 1.2 following settings
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 let g:deoplete#enable_at_startup=1
 "   deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -183,8 +179,8 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " 2.1 Install fzf (above)
 " 2.2 following setting
 set rtp+=~/.fzf
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 "   This is the default extra key bindings
 let g:fzf_action = {
     \ 'ctrl-t': 'tab split',
@@ -199,7 +195,7 @@ nnoremap <silent> <leader><space> :Files<CR>
 " 3 ag(Silver Searcher)
 " 3.1 install ag (above)
 " 3.2 ag settings
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 let g:ackprg = 'ag -vimgrep --smart-case'
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
@@ -207,7 +203,7 @@ cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 
 " 4 Airline
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enable = 1
 " 4.1 set airline 
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
@@ -226,15 +222,15 @@ nmap <leader>5 <Plug>AirlineSelectTab5
 
 " 5 Rust-specific plugin
 " 5.1 Rust.vim
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1 " automatically formatted for standard style
 " 5.2 Syntastic (Check syntax error)
-Plugin 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 " 5.3 Vim Racer (rust smart autocomplete)
-Plugin 'racer-rust/vim-racer'
+Plug 'racer-rust/vim-racer'
 " 5.3.1 install Racer (https://github.com/racer-rust/racer )
 " 5.3.2 set plugin
 let g:racer_cmd = cross_platform_racer_cmd
@@ -257,16 +253,15 @@ augroup END
 " 6.4 gruvbox-material
 
 " Automatic installing plugins
-if hasVundle == 0
+if hasVimPlug == 0
     echo "Installing plugins, please ignore some key map error messages"
     echo ""
     :source $MYVIMRC
-    :PluginInstall
+    :PlugInstall
 endif
 
 " All of your Plugins must be added before the following line
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 " End - Setting up Vundle
 
 " theme
