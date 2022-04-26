@@ -20,6 +20,8 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 alias gs="git status"
 alias c="clear"
 alias v="vim"
+alias la="ls -a"
+alias ll="ls -l"
 ## MacOS
 alias bs="brew search"
 alias bi="brew install"
