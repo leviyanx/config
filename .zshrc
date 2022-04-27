@@ -19,20 +19,24 @@ export PATH="/usr/local/bin:$PATH"
 # python version
 export PATH="/usr/local/opt/python@3.10/bin:$PATH" 
 
-# Aliases
-# Simple Aliases
+# 2 Aliases
+# 2.1 Simple Aliases
 alias gs="git status"
 alias gf="git diff"
 alias c="clear"
 alias v="vim"
-alias la="ls -a"
-alias ll="ls -l"
-## MacOS
+alias la="ls -aG"
+alias ll="ls -alhG"
+alias f="fzf"
+# tldr: Install tldr: `sudo npm install -g tldr`
+alias tl="tldr"
+## 2.1.1 MacOS
 alias bs="brew search"
 alias bi="brew install"
-# Global Aliases
 
-# Para Aliases
+# 2.2 Global Aliases
+
+# 2.3 Para Aliases
 # Git add, a command example:
 #   $ gd README.md
 ga() {
