@@ -61,3 +61,7 @@ mcd() {
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# proxy setting
+export http_proxy="127.0.0.1:12346"
+export https_proxy="127.0.0.1:12346"
