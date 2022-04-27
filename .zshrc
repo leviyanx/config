@@ -65,3 +65,8 @@ mcd() {
 # proxy setting
 export http_proxy="127.0.0.1:12346"
 export https_proxy="127.0.0.1:12346"
+
+# Node version manager for OSX or Linux
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
