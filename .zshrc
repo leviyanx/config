@@ -1,3 +1,7 @@
+# Automatically install necessary programs
+# oh-my-zsh
+# powerlevel10k
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -18,6 +22,7 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 # Aliases
 # Simple Aliases
 alias gs="git status"
+alias gf="git diff"
 alias c="clear"
 alias v="vim"
 alias la="ls -a"
@@ -46,6 +51,12 @@ gc() {
     else
         git commit -m $commit_message
     fi
+}
+# Create a folder and go into it
+#   $ mcd test
+mcd() {
+    mkdir -p "$1"
+    cd "$1"
 }
 
 # fzf
