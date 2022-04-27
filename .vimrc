@@ -112,6 +112,10 @@ set expandtab
 " Not extend tab to 4 spaces in Makefile
 autocmd FileType make setlocal noexpandtab
 
+" Map shift-tab to inverse tab
+" for insert mode
+inoremap <S-Tab> <C-d> 
+
 " Specific platform setting
 " MacOS
 if env == 'DARWIN'
