@@ -33,10 +33,19 @@ alias bi="brew install"
 ga() {
     git add $1
 }
-# Git commit, a command example: 
-#   $ gc "This is a commit"
+# Git commit
+# if commit message is null, run "git commit"
+# else run "git commit commit_message"
+#
+# a example:
+# $ gc "init commit"
 gc() {
-    git commit -m $1
+    commit_message=$1
+    if [[ -z "$commit_message" ]]; then
+        git commit
+    else
+        git commit -m $commit_message
+    fi
 }
 
 # fzf
