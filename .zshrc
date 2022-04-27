@@ -30,6 +30,7 @@ alias ll="ls -alhG"
 alias f="fzf"
 # tldr: Install tldr: `sudo npm install -g tldr`
 alias tl="tldr"
+alias zconf="vim ~/.zshrc"
 ## 2.1.1 MacOS
 alias bs="brew search"
 alias bi="brew install"
