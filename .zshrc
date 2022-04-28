@@ -129,24 +129,23 @@ alias bi="brew install"
 
 # 2.2 Global Aliases
 
-# 3 Functions
-# Git add, a command example:
+# 2.3 Param Aliases
+# Git add, an example:
 #   $ gd README.md
-ga() {
-    git add $1
-}
+unalias ga # remove given alias from oh-my-zsh
+ga() { git add "$1"; }
 # Git commit
 # if commit message is null, run "git commit"
 # else run "git commit commit_message"
 #
-# a example:
-# $ gc "init commit"
+# an example:
+#   $ gc "init commit"
+unalias gc # remove given alias from oh-my-zsh
 gc() {
-    commit_message=$1
-    if [[ -z $commit_message ]]; then
+    if [[ -z "$1" ]]; then
         git commit
     else
-        git commit -m $commit_message
+        git commit -m "$1"
     fi
 }
 # Create a folder and go into it
