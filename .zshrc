@@ -24,6 +24,10 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+# Node version manager for OSX or Linux
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # 0 Automatically install necessary programs
 # 0.1 oh-my-zsh
@@ -42,14 +46,12 @@ if [[ ! -f "$ZSH_CUSTOM/plugins/zsh-autosuggestions/README.md" ]]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     echo "Successfually installing zsh-autosuggestions .."
 fi
-
 # 0.2.2 OMZ plugin: zsh-syntax-highlighting 
 if [[ ! -f "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/README.md" ]]; then
     echo "Installing zsh-syntax-highlighting.." 
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     echo "Successfually installing zsh-syntax-highlighting .."
 fi
-
 # 0.2.3 OMZ plugin: zsh-vi-mode 
 if [[ ! -f "$ZSH_CUSTOM/plugins/zsh-vi-mode/README.md" ]]; then
     echo "Installing zsh-vi-mode.." 
@@ -64,7 +66,6 @@ if [[ ! -f "$ZSH_CUSTOM/themes/powerlevel10k/README.md" ]]; then
     git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     echo "Successfually installing p10k(OMZ theme) .."
 fi
-
 if [[ ! -d "$HOME/powerlevel10k" ]]; then
     echo "Installing p10k.."
     git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/powerlevel10k
@@ -72,6 +73,8 @@ if [[ ! -d "$HOME/powerlevel10k" ]]; then
 fi
 
 # 0.4 Shell tools
+install_npm_suggestion="If haven't installed npm, you can use nvm to install it, visit this page to learn how install nvm \
+(https://github.com/nvm-sh/nvm#installing-and-updating), then run 'nvm install node' to install npm"
 # 0.4.1 fzf (support vim plugin)
 if [[ ! -f "$HOME/.fzf/README.md" ]]; then
     echo "Installing fzf .."
@@ -79,10 +82,19 @@ if [[ ! -f "$HOME/.fzf/README.md" ]]; then
     ~/.fzf/install
     echo "Successfully install fzf"
 fi
-# 0.4.2 ag
-if ! [[ -x "$(command -v ag)" ]]; then
+# 0.4.2 ag (support vim plugin)
+if [[ ! -x "$(command -v ag)" ]]; then
     echo "Please install ag(the silver search), visit this page https://github.com/ggreer/the_silver_searcher"
 fi 
+# 0.4.3 tldr
+if [[ ! -x "$(command -v tldr)" ]]; then
+    echo "Please install tldr, run command: 'sudo npm install -g tldr'"
+    echo $install_npm_suggestion
+fi
+# 0.4.4 ripgrep
+if [[ ! -x "$(command -v rg)" ]]; then
+    echo "Please install ripgrep, visit this page https://github.com/BurntSushi/ripgrep#installation"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -191,7 +203,6 @@ alias v="vim"
 alias la="ls -aG"
 alias ll="ls -alhG"
 alias f="fzf"
-# tldr: Install tldr: `sudo npm install -g tldr`
 alias tl="tldr"
 alias zconf="vim ~/.zshrc"
 ## 2.1.1 MacOS
@@ -228,9 +239,3 @@ mcd() {
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Node version manager for OSX or Linux
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
