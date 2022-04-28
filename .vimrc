@@ -139,24 +139,6 @@ endif
 let hasVimPlug = 1
 let vimPlugPath = expand('~/.vim/autoload/plug.vim')
 if !filereadable(vimPlugPath)
-    " Automatic install some necessary software
-    if env == "DARWIN"
-       " Install fzf
-       echo "Installing fzf..."
-       echo ""
-       silent !git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-       silent !~/.fzf/install
-       " Install ag
-       echo "Installing ag..."
-       echo ""
-       silent !brew install the_silver_searcher
-    elseif env == "WINDOWS"
-        echo "Installing fzf..."
-        echo ""
-        silent !git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-        silent !~/.fzf/install
-        " Install ag
-    endif
     " Automatic install Vim Plug
     echo "Installing Vim Plug..."
     echo ""
@@ -180,7 +162,7 @@ let g:deoplete#enable_at_startup=1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " 2 fzf(Fuzzy file finder)
-" 2.1 Install fzf (above)
+" 2.1 Install fzf (zsh will install it automatically)
 " 2.2 following setting
 set rtp+=~/.fzf
 Plug 'junegunn/fzf'
@@ -197,7 +179,7 @@ let g:fzf_layout = {'down': '~40%'}
 nnoremap <silent> <leader><space> :Files<CR>
 
 " 3 ag(Silver Searcher)
-" 3.1 install ag (above)
+" 3.1 install ag (zsh will install it automatically)
 " 3.2 ag settings
 Plug 'mileszs/ack.vim'
 let g:ackprg = 'ag -vimgrep --smart-case'

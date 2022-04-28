@@ -55,12 +55,24 @@ if [[ ! -f "$ZSH_CUSTOM/themes/powerlevel10k/README.md" ]]; then
     echo "Successfually installing p10k(OMZ theme) .."
 fi
 
-# 0.4 powerlevel10k
 if [[ ! -d "$HOME/powerlevel10k" ]]; then
     echo "Installing p10k.."
     git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/powerlevel10k
     echo "Successfully! Please start a new session."
 fi
+
+# 0.4 Shell tools
+# 0.4.1 fzf (support vim plugin)
+if [[ ! -f "$HOME/.fzf/README.md" ]]; then
+    echo "Installing fzf .."
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    echo "Successfully install fzf"
+fi
+# 0.4.2 ag
+if ! [[ -x "$(command -v ag)" ]]; then
+    echo "Please install ag(the silver search), visit this page https://github.com/ggreer/the_silver_searcher"
+fi 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
