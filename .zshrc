@@ -74,7 +74,7 @@ fi
 
 # 0.4 Shell tools
 install_npm_suggestion="If haven't installed npm, you can use nvm to install it, visit this page to learn how install nvm \
-(https://github.com/nvm-sh/nvm#installing-and-updating), then run 'nvm install node' to install npm"
+(https://github.com/nvm-sh/nvm#installing-and-updating ), then run 'nvm install node' to install npm"
 # 0.4.1 fzf (support vim plugin)
 if [[ ! -f "$HOME/.fzf/README.md" ]]; then
     echo "Installing fzf .."
