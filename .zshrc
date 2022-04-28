@@ -10,7 +10,7 @@ if [[ ! -f "$HOME/.custom-machine-settings.sh" ]]; then
     echo "unset http_proxy"
     echo "unset https_proxy"
     echo "================="
-    echo "If this is not a custom machine, create this file but leave it blank content"
+    echo "If this is not a custom machine, create this file but leave it content blank"
 fi
 source ~/.custom-machine-settings.sh
 
