@@ -4,6 +4,16 @@
 export http_proxy="127.0.0.1:12346"
 export https_proxy="127.0.0.1:12346"
 
+# custom machine settings
+if [[ ! -f "$HOME/.custom-machine-settings.sh" ]]; then
+    echo "If this is a custom machine, paste these commands to ~/.custom-machine-settings.sh:"
+    echo "unset http_proxy"
+    echo "unset https_proxy"
+    echo "================="
+    echo "If this is not a custom machine, create this file but leave it blank content"
+fi
+source ~/.custom-machine-settings.sh
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
