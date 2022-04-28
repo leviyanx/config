@@ -16,26 +16,49 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 # 0 Automatically install necessary programs
-# oh-my-zsh
-if [[ ! -d "$ZSH" ]]; then
-    # install OMY without replacing .zshrc
-    echo "Installing Oh my zsh.."
+# 0.1 oh-my-zsh
+if [[ ! -f "$ZSH/oh-my-zsh.sh" ]]; then
+    # Delete .oh-my-zsh folder left by last failure installation to prevent it interfering the process of installing
+    rm -rf "$ZSH"
+    # install OMZ without replacing .zshrc
+    echo "Installing Oh my zsh .."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
-    # plugin: zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode 
+fi
+
+# 0.2 OMZ plugins
+# 0.2.1 OMZ plugin: zsh-autosuggestions 
+if [[ ! -f "$ZSH_CUSTOM/plugins/zsh-autosuggestions/README.md" ]]; then
     echo "Installing zsh-autosuggestions.."
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    echo "Successfually installing zsh-autosuggestions .."
+fi
+
+# 0.2.2 OMZ plugin: zsh-syntax-highlighting 
+if [[ ! -f "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/README.md" ]]; then
     echo "Installing zsh-syntax-highlighting.." 
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    echo "Successfually installing zsh-syntax-highlighting .."
+fi
+
+# 0.2.3 OMZ plugin: zsh-vi-mode 
+if [[ ! -f "$ZSH_CUSTOM/plugins/zsh-vi-mode/README.md" ]]; then
     echo "Installing zsh-vi-mode.." 
     git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
-    echo "Successfully! Please start a new session."
+    echo "Successfually installing zsh-vi-mode .."
 fi
-# powerlevel10k
+
+# 0.3 OMZ themes
+# 0.3.1 OMZ theme: p10k
+if [[ ! -f "$ZSH_CUSTOM/themes/powerlevel10k/README.md" ]]; then
+    echo "Installing p10k for OMZ.."
+    git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    echo "Successfually installing p10k(OMZ theme) .."
+fi
+
+# 0.4 powerlevel10k
 if [[ ! -d "$HOME/powerlevel10k" ]]; then
     echo "Installing p10k.."
     git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/powerlevel10k
-    echo "Installing p10k for OMZ.."
-    git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     echo "Successfully! Please start a new session."
 fi
 
