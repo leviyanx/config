@@ -1,18 +1,18 @@
 #!/usr/bin/env zsh
 
+# Get profiling information(more detailed load time) by running: 'zprof'
+zmodload zsh/zprof
+
+# resolve the problem of compinit spending too much time
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
 # proxy setting
 export http_proxy="127.0.0.1:12346"
 export https_proxy="127.0.0.1:12346"
-
-# custom machine settings
-if [[ ! -f "$HOME/.custom-machine-settings.sh" ]]; then
-    echo "If this is a custom machine, paste these commands to ~/.custom-machine-settings.sh:"
-    echo "unset http_proxy"
-    echo "unset https_proxy"
-    echo "================="
-    echo "If this is not a custom machine, create this file but leave it content blank"
-fi
-source ~/.custom-machine-settings.sh
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -24,10 +24,27 @@ export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+export ZSH_PLUGINS="$HOME/.oh-my-zsh/custom/plugins"
+export ZSH_THEMES="$HOME/.oh-my-zsh/custom/themes"
+# Add default node to path (to skip NVM checking time )
+export PATH=~/.nvm/versions/node/v18.0.0/bin:$PATH
 # Node version manager for OSX or Linux
+# This loads nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# custom machine settings
+if [[ ! -f "$HOME/.custom-machine-settings.sh" ]]; then
+    echo "If this is a custom machine, paste these commands to ~/.custom-machine-settings.sh:"
+    echo "unset http_proxy"
+    echo "unset https_proxy"
+    echo "================="
+    echo "and install: python 3.10, node 18.0.0"
+    echo "====================================="
+    echo "If this is not a custom machine, create this file but leave it content blank"
+fi
+source ~/.custom-machine-settings.sh
 
 # 0 Automatically install necessary programs
 # 0.1 oh-my-zsh
@@ -161,10 +178,9 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
-
 # zsh-vi-mode
 ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -205,6 +221,7 @@ alias ll="ls -alhG"
 alias f="fzf"
 alias tl="tldr"
 alias zconf="vim ~/.zshrc"
+alias zload="exec zsh"
 ## 2.1.1 MacOS
 alias bs="brew search"
 alias bi="brew install"
@@ -235,6 +252,11 @@ gc() {
 mcd() {
     mkdir -p "$1"
     cd "$1"
+}
+# To test my zsh load time
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
 # fzf
