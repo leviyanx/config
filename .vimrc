@@ -181,7 +181,7 @@ nnoremap <silent> <leader><space> :Files<CR>
 " 3 ag(Silver Searcher)
 " 3.1 install ag (zsh will install it automatically)
 " 3.2 ag settings
-Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim', { 'on': ['Ag', 'Ack'] }
 let g:ackprg = 'ag -vimgrep --smart-case'
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
@@ -208,7 +208,7 @@ nmap <leader>5 <Plug>AirlineSelectTab5
 
 " 5 Rust-specific plugin
 " 5.1 Rust.vim
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 let g:rustfmt_autosave = 1 " automatically formatted for standard style
 " 5.2 Syntastic (Check syntax error)
 Plug 'vim-syntastic/syntastic'
@@ -216,7 +216,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 " 5.3 Vim Racer (rust smart autocomplete)
-Plug 'racer-rust/vim-racer'
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 " 5.3.1 install Racer (https://github.com/racer-rust/racer )
 " 5.3.2 set plugin
 let g:racer_cmd = cross_platform_racer_cmd
