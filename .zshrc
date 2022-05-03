@@ -112,6 +112,10 @@ fi
 if [[ ! -x "$(command -v rg)" ]]; then
     echo "Please install ripgrep, visit this page https://github.com/BurntSushi/ripgrep#installation"
 fi
+# 0.4.5 fd (alternative to find)
+if [[ ! -x "$(command -v fd)" ]]; then
+    echo "Please install fd. If you use MacOS, you can install it with brew, otherwise visit this page https://github.com/sharkdp/fd"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -261,5 +265,8 @@ timezsh() {
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# using fd with fzf
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
