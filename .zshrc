@@ -262,6 +262,18 @@ timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+# cd "My Drive"
+cdg() {
+    cd "$HOME/My Drive"
+}
+# Save current working directory
+marco() {
+    export marco_dir=`pwd`
+}
+# Return back the directory where you executed marco
+polo() {
+    cd $marco_dir
+}
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
