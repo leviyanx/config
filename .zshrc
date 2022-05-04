@@ -226,6 +226,7 @@ alias f="fzf"
 alias tl="tldr"
 alias zconf="vim ~/.zshrc"
 alias zload="exec zsh"
+alias vconf="vim ~/.vimrc"
 ## 2.1.1 MacOS
 alias bs="brew search"
 alias bi="brew install"
