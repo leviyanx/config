@@ -129,6 +129,14 @@ inoremap <S-Tab> <C-d>
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+" Rename variable
+" (1) Place cursor at name to rename and type
+" (2) For local replace/ global repalce
+" `gr`/`gR` then type new name + <esc> to rename variable declaration, then use `.` to rename next occurrence(s)
+" or `:%norm .` to rename all occurrence in the buffer at once.
+nnoremap gr gdcgn
+nnoremap gR gDcgn
+
 " Specific platform setting
 " MacOS
 if env == 'DARWIN'
