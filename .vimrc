@@ -87,19 +87,10 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 " Map kj to ESC
-inoremap kj <C-[> 
+inoremap kj <Esc>
 
 " Map leader to comma
 let mapleader = ","
-
-" Split screening
-"   Easy split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-set splitbelow
-set splitright
 
 " Map Tab to 4 Space
 filetype plugin indent on
@@ -115,6 +106,14 @@ autocmd FileType make setlocal noexpandtab
 " Map shift-tab to inverse tab
 " for insert mode
 inoremap <S-Tab> <C-d> 
+" Split screening
+" Easy split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
 
 " Use a line cursor within insert mode and a block cursor everything else
 "
@@ -170,7 +169,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Keep Plugin commands between vundle#begin/end
+" Keep Plugin commands between plug#begin/end
 " ----------- Add Plugin Declaration Here ----------
 " 1 YouCompleteMe
 " Visit this page(https://github.com/ycm-core/YouCompleteMe) to complete YCM installation
