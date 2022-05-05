@@ -172,15 +172,18 @@ call plug#begin('~/.vim/plugged')
 
 " Keep Plugin commands between vundle#begin/end
 " ----------- Add Plugin Declaration Here ----------
-" 1 Deoplete(autocomplete)
-" 1.1 Require vim8 and python 3.6.1 and config vim to support python
-" 1.2 following settings
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-let g:deoplete#enable_at_startup=1
-"   deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" 1 YouCompleteMe
+" Visit this page(https://github.com/ycm-core/YouCompleteMe) to complete YCM installation
+Plug 'Valloric/YouCompleteMe', { 'on': [] }
+" Lazy load: load YCM until press `i`(to insert)
+let g:YouCompleteMeLazyLoaded = 0
+function! LazyLoadingYMC()
+    if g:YouCompleteMeLazyLoaded == 0
+        g:YouCompleteMeLazyLoaded = 1
+        call plug#load('YouCompleteMe') | call youcompleteme#Enable()
+    endif
+endfunction
+autocmd InsertEnter * call LazyLoadingYMC()
 
 " 2 fzf(Fuzzy file finder)
 " 2.1 Install fzf (zsh will install it automatically)
@@ -236,20 +239,6 @@ Plug 'vim-syntastic/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
-" 5.3 Vim Racer (rust smart autocomplete)
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-" 5.3.1 install Racer (https://github.com/racer-rust/racer )
-" 5.3.2 set plugin
-let g:racer_cmd = cross_platform_racer_cmd
-let g:racer_experimental_completer = 1
-augroup Racer
-    autocmd!
-    autocmd FileType rust nmap <buffer> gd <Plug>(rust-def)
-    autocmd FileType rust nmap <buffer> gs <Plug>(rust-def-split)
-    autocmd FileType rust nmap <buffer> gx <Plug>(rust-def-vertical)
-    autocmd FileType rust nmap <buffer> gt <Plug>(rust-def-tab)
-    autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
-augroup END
 
 " 6 Theme plugin 
 "   Not use vundle to install theme, but manually install it
@@ -258,6 +247,7 @@ augroup END
 " 6.2 OneDark
 " 6.3 everforest
 " 6.4 gruvbox-material
+
 
 " Automatic installing plugins
 if hasVimPlug == 0
