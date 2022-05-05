@@ -86,8 +86,8 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
-" ESC
-inoremap kj <ESC> 
+" Map kj to ESC
+inoremap kj <C-[> 
 
 " Map leader to comma
 let mapleader = ","
