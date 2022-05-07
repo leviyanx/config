@@ -53,6 +53,16 @@ if [[ ! -f "$ZSH/oh-my-zsh.sh" ]]; then
     rm -rf "$ZSH"
     # install OMZ without replacing .zshrc
     echo "Installing Oh my zsh .."
+    echo "======================= \
+Or if you want to install it manually(especially in a custom machine that lack proxy, \
+execute these commands: \
+(1) git clone https://gitee.com/mirrors/oh-my-zsh.git ~/oh-my-zsh \
+(2) sh -c ~/oh-my-zsh/tools/install.sh "" --keep-zshrc \
+(3) rm -rf ~/oh-my-zsh \
+Note: Maybe OMZ backup .zshrc to .zshrc.pre-oh-my-zsh, you should delete the new .zshrc \
+and restore original .zshrc.
+============================"
+
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 fi
 
