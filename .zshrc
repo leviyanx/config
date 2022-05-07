@@ -51,18 +51,14 @@ source ~/.custom-machine-settings.sh
 if [[ ! -f "$ZSH/oh-my-zsh.sh" ]]; then
     # Delete .oh-my-zsh folder left by last failure installation to prevent it interfering the process of installing
     rm -rf "$ZSH"
-    # install OMZ without replacing .zshrc
+    
+    # manually install OMZ without replacing .zshrc
     echo "Installing Oh my zsh .."
-    echo "======================= \
-Or if you want to install it manually(especially in a custom machine that lack proxy, \
-execute these commands: \
-(1) git clone https://gitee.com/mirrors/oh-my-zsh.git ~/oh-my-zsh \
-(2) sh -c ~/oh-my-zsh/tools/install.sh "" --keep-zshrc \
-(3) rm -rf ~/oh-my-zsh \
-Note: Maybe OMZ backup .zshrc to .zshrc.pre-oh-my-zsh, you should delete the new .zshrc \
-and restore original .zshrc.
-============================"
+    echo "======================="
+    echo -e "Or if you want to install it manually(especially in a custom machine that lack proxy, \nexecute these commands: \n(1) git clone https://gitee.com/mirrors/oh-my-zsh.git ~/oh-my-zsh \n(2) sh -c ~/oh-my-zsh/tools/install.sh "" --keep-zshrc \n(3) rm -rf ~/oh-my-zsh \nNote: Maybe OMZ backup .zshrc to .zshrc.pre-oh-my-zsh, you should delete the new .zshrc \nand restore original .zshrc."
+    echo "============================"
 
+    # automacally install OMZ without replacing .zshrc
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 fi
 
@@ -100,8 +96,7 @@ if [[ ! -d "$HOME/powerlevel10k" ]]; then
 fi
 
 # 0.4 Shell tools
-install_npm_suggestion="If haven't installed npm, you can use nvm to install it, visit this page to learn how install nvm \
-(https://github.com/nvm-sh/nvm#installing-and-updating ), then run 'nvm install node' to install npm"
+install_npm_suggestion="If haven't installed npm, you can use nvm to install it, visit this page to learn how install nvm \n(https://github.com/nvm-sh/nvm#installing-and-updating ), then run 'nvm install node' to install npm"
 # 0.4.1 fzf (support vim plugin)
 if [[ ! -f "$HOME/.fzf/README.md" ]]; then
     echo "Installing fzf .."
@@ -116,7 +111,7 @@ fi
 # 0.4.3 tldr
 if [[ ! -x "$(command -v tldr)" ]]; then
     echo "Please install tldr, run command: 'sudo npm install -g tldr'"
-    echo $install_npm_suggestion
+    echo -e $install_npm_suggestion
 fi
 # 0.4.4 ripgrep
 if [[ ! -x "$(command -v rg)" ]]; then
@@ -130,13 +125,8 @@ fi
 if [[ ! -f "$HOME/.vim/autoload/plug.vim" ]]; then
     echo "Installing plug-vim .."
     echo "======================"
-    echo "Or if you want to download the file manually (especially in a custom machine that lack proxy, \
-        execute these commands: \
-        (1) git clone https://github.com/junegunn/vim-plug.git ~/vim-plug \
-        (2) mkdir ~/.vim/autoload \
-        (3) mv ~/vim-plug/plug.vim ~/.vim/autoload/ \
-        (4) rm -rf ~/vim-plug \
-        ====================="
+    echo -e "Or if you want to download the file manually (especially in a custom machine that lack proxy, \nexecute these commands: \n(1) git clone https://github.com/junegunn/vim-plug.git ~/vim-plug \n(2) mkdir ~/.vim/autoload \n(3) mv ~/vim-plug/plug.vim ~/.vim/autoload/ \n(4) rm -rf ~/vim-plug"
+    echo "====================="
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
