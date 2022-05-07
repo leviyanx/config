@@ -155,18 +155,6 @@ elseif env == "Linux"
 endif
 
 " START - Setting up Vim-Plug
-" Automatically install Vim-Plug on first run of Vim
-let hasVimPlug = 1
-let vimPlugPath = expand('~/.vim/autoload/plug.vim')
-if !filereadable(vimPlugPath)
-    " Automatic install Vim Plug
-    echo "Installing Vim Plug..."
-    echo ""
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-    let hasVimPlug = 0 " Give the code below a sign to install plugin
-endif
-
 call plug#begin('~/.vim/plugged')
 
 " Keep Plugin commands between plug#begin/end
@@ -246,15 +234,6 @@ let g:syntastic_check_on_wq = 0
 " 6.2 OneDark
 " 6.3 everforest
 " 6.4 gruvbox-material
-
-
-" Automatic installing plugins
-if hasVimPlug == 0
-    echo "Installing plugins, please ignore some key map error messages"
-    echo ""
-    :source $MYVIMRC
-    :PlugInstall
-endif
 
 " All of your Plugins must be added before the following line
 call plug#end()

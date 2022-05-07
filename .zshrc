@@ -126,6 +126,19 @@ fi
 if [[ ! -x "$(command -v fd)" ]]; then
     echo "Please install fd. If you use MacOS, you can install it with brew, otherwise visit this page https://github.com/sharkdp/fd"
 fi
+# 0.4.6 vim-plug (support vim plugin)
+if [[ ! -f "$HOME/.vim/autoload/plug.vim" ]]; then
+    echo "Installing plug-vim .."
+    echo "======================"
+    echo "Or if you want to download the file manually (especially in a custom machine that lack proxy, \
+        execute these commands: \
+        (1) git clone https://github.com/junegunn/vim-plug.git ~/vim-plug \
+        (2) mkdir ~/.vim/autoload \
+        (3) mv ~/vim-plug/plug.vim ~/.vim/autoload/ \
+        (4) rm -rf ~/vim-plug \
+        ====================="
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
