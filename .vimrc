@@ -103,17 +103,21 @@ set expandtab       " On pressing tab, insert 4 spaces
 " Not extend tab to 4 spaces in Makefile
 autocmd FileType make setlocal noexpandtab
 
-" Map shift-tab to inverse tab
-" for insert mode
+" Map shift-tab to inverse tab for insert mode
 inoremap <S-Tab> <C-d> 
+
 " Split screening
-" Easy split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
+nnoremap ,x1 <C-W>o
+nnoremap ,x2 :split<CR>
+nnoremap ,x3 :vsplit<CR>
+nnoremap ,x0 :q<CR>
+" move window
+nnoremap ,wh <C-W>h
+nnoremap ,wl <C-W>l
+nnoremap ,wj <C-W>j
+nnoremap ,wk <C-W>k
 
 " Use a line cursor within insert mode and a block cursor everything else
 "
