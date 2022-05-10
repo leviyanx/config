@@ -141,7 +141,8 @@ set cursorline " highlight current line
 set wildmenu    " visual autocomplete for command menu
 set showmatch   " highlight matching [{()}]j
 
-set clipboard=unnamedplus " X clipboard as unnamed
+" make vim paste from (and copy to) system's clipboard
+set clipboard=unnamed
 
 " Specific platform setting
 " MacOS
