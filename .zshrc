@@ -35,16 +35,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # custom machine settings
-if [[ ! -f "$HOME/.custom-machine-settings.sh" ]]; then
-    echo "If this is a custom machine, paste these commands to ~/.custom-machine-settings.sh:"
+if [[ ! -f "$HOME/.guest-machine-settings.sh" ]]; then
+    echo "If this is a guest machine, paste these commands to ~/.guest-machine-settings.sh:"
     echo "unset http_proxy"
     echo "unset https_proxy"
     echo "================="
     echo "and install: python 3.10, node 18.0.0"
     echo "====================================="
-    echo "If this is not a custom machine, create this file but leave it content blank"
+    echo "If this is not a guest machine, create this file but leave it content blank"
 fi
-source ~/.custom-machine-settings.sh
+source ~/.guest-machine-settings.sh
 
 # 0 Automatically install necessary programs
 # 0.1 oh-my-zsh
