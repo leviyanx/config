@@ -144,6 +144,12 @@ set showmatch   " highlight matching [{()}]j
 " make vim paste from (and copy to) system's clipboard
 set clipboard=unnamed
 
+" copy file name/path of current buffer in vim to system clipboard
+" full path
+nnoremap <leader>fn :let @*=expand("%:p")<CR>
+" filename
+nnoremap <leader>fp :let @*=expand("%:t")<CR>
+
 " Specific platform setting
 " MacOS
 if env == 'DARWIN'
@@ -194,8 +200,10 @@ let g:fzf_action = {
 "   Default fzf layout
 "   - down / up / left / right
 let g:fzf_layout = {'down': '~40%'}
-"   ', space' to open fzf file finder
+" quickly open files with fzf
 nnoremap <silent> <leader>kk :Files<CR>
+" open recent files with fzf
+nnoremap <silent> <leader>rr :History<CR>
 
 " 3 ag(Silver Searcher)
 " 3.1 install ag (zsh will install it automatically)
