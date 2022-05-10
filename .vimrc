@@ -87,19 +87,19 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 " Map kj to ESC
-inoremap kj <Esc>
+inoremap kj <Esc> " press kj to exit insert mode
+vnoremap kj <Esc> " press kj to exit visual mode
 
 " Map leader to comma
 let mapleader = ","
+let localleader = ","
 
 " Map Tab to 4 Space
 filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
+set tabstop=4       " show existing tab with 4 spaces width
+set softtabstop=4   " number of spaces in tab when editing
+set shiftwidth=4    " spaces in newline start
+set expandtab       " On pressing tab, insert 4 spaces
 " Not extend tab to 4 spaces in Makefile
 autocmd FileType make setlocal noexpandtab
 
@@ -135,6 +135,13 @@ let &t_EI = "\e[2 q"
 " or `:%norm .` to rename all occurrence in the buffer at once.
 nnoremap gr gdcgn
 nnoremap gR gDcgn
+
+set cursorline " highlight current line
+
+set wildmenu    " visual autocomplete for command menu
+set showmatch   " highlight matching [{()}]j
+
+set clipboard=unnamedplus " X clipboard as unnamed
 
 " Specific platform setting
 " MacOS
