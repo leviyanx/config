@@ -195,7 +195,7 @@ let g:fzf_action = {
 "   - down / up / left / right
 let g:fzf_layout = {'down': '~40%'}
 "   ', space' to open fzf file finder
-nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader>kk :Files<CR>
 
 " 3 ag(Silver Searcher)
 " 3.1 install ag (zsh will install it automatically)
