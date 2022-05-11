@@ -192,9 +192,6 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# zsh-vi-mode
-ZVM_VI_INSERT_ESCAPE_BINDKEY=kj # map kj to <Esc> in insert mode
-ZVM_VI_VISUAL_ESCAPE_BINDKEY=kj # map kj to <Esc> in visual mode
 plugins=(git)
 plugins+=(zsh-autosuggestions)
 plugins+=(zsh-syntax-highlighting)
@@ -203,6 +200,14 @@ plugins+=(zsh-vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# zsh-vi-mode
+ZVM_VI_INSERT_ESCAPE_BINDKEY=kj # map kj to <Esc> in insert mode
+ZVM_VI_VISUAL_ESCAPE_BINDKEY=kj # map kj to <Esc> in visual mode
+# The plugin will auto execute this zvm_after_init function
+function zvm_after_init() {
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+}
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -293,7 +298,6 @@ polo() {
 }
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # key bindings for command-line
 # 1) find file or directory (using fd with fzf)
 export FZF_CTRL_T_COMMAND="fd"
