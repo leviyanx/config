@@ -95,11 +95,11 @@ let mapleader = ","
 let localleader = ","
 
 " Map Tab to 4 Space
-filetype plugin indent on
-set tabstop=4       " show existing tab with 4 spaces width
-set softtabstop=4   " number of spaces in tab when editing
-set shiftwidth=4    " spaces in newline start
-set expandtab       " On pressing tab, insert 4 spaces
+filetype plugin indent on   " turn on filetype 'detection', 'plugin' and 'indent'
+set tabstop=4               " show existing tab with 4 spaces width
+set softtabstop=4           " number of spaces in tab when editing
+set shiftwidth=4            " spaces in newline start
+set expandtab               " On pressing tab, insert 4 spaces
 " Not extend tab to 4 spaces in Makefile
 autocmd FileType make setlocal noexpandtab
 
