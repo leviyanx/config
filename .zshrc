@@ -193,8 +193,12 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-vi-mode
-ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+ZVM_VI_INSERT_ESCAPE_BINDKEY=kj # map kj to <Esc> in insert mode
+ZVM_VI_VISUAL_ESCAPE_BINDKEY=kj # map kj to <Esc> in visual mode
+plugins=(git)
+plugins+=(zsh-autosuggestions)
+plugins+=(zsh-syntax-highlighting)
+plugins+=(zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
