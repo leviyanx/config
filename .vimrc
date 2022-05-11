@@ -57,8 +57,10 @@ set hidden
 set ignorecase
 set smartcase
 
-"Enble searching as you type, rather than waiting till you press enter.
+" Enble searching as you type, rather than waiting till you press enter.
 set incsearch
+" highlight matches
+set hlsearch
 
 " Unbind some useless/annoying default key bindings.
 " 'Q' in normal mode enters Ex mode. You almost never want this.
@@ -153,6 +155,9 @@ set clipboard=unnamed
 nnoremap <leader>fn :let @*=expand("%:p")<CR>
 " filename
 nnoremap <leader>fp :let @*=expand("%:t")<CR>
+
+" find (search for) selected text
+vnoremap <leader>ss y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 " Specific platform setting
 " MacOS
