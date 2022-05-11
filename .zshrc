@@ -104,16 +104,13 @@ if [[ ! -f "$HOME/.fzf/README.md" ]]; then
     ~/.fzf/install
     echo "Successfully install fzf"
 fi
-# 0.4.2 ag (support vim plugin)
-if [[ ! -x "$(command -v ag)" ]]; then
-    echo "Please install ag(the silver search) and ack(ag may need it), visit this page to install ag: https://github.com/ggreer/the_silver_searcher"
-fi 
+# 0.4.2 lacked
 # 0.4.3 tldr
 if [[ ! -x "$(command -v tldr)" ]]; then
     echo "Please install tldr, run command: 'sudo npm install -g tldr'"
     echo -e $install_npm_suggestion
 fi
-# 0.4.4 ripgrep
+# 0.4.4 ripgrep (support vim plugin)
 if [[ ! -x "$(command -v rg)" ]]; then
     echo "Please install ripgrep, visit this page https://github.com/BurntSushi/ripgrep#installation"
 fi
