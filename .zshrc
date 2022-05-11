@@ -293,8 +293,14 @@ polo() {
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# key bindings for command-line
 # using fd with fzf
-export FZF_DEFAULT_COMMAND='fd --type file'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_COMMAND="fd . --type f"
+# CTRL-T enable: border, preview
+export FZF_CTRL_T_OPTS="--height=40% --layout=reverse --inline-info --border --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+# uses tree command to show the entries of the directory
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
