@@ -6,8 +6,6 @@
 " `vim -u foo`).
 set nocompatible
 
-filetype off " Vundle required
-
 " Functions
 " 1. Determinte environment we are runnning on(Win or Linux or Darwin) 
 function! WhichEnv() abort
@@ -262,9 +260,9 @@ nnoremap <leader>ci :Commentary<CR>
 " comment out visually selected lines
 vnoremap <leader>ci :Commentary<CR>
 
-" All of your Plugins must be added before the following line
+" All of your Plugins must be added above the following line
 call plug#end()
-" End - Setting up Vundle
+" End - Setting up Plug-Vim
 
 " theme
 set background=dark " for everforest or gruvbox-material theme
