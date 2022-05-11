@@ -159,6 +159,8 @@ nnoremap <leader>fp :let @*=expand("%:t")<CR>
 " find (search for) selected text
 vnoremap <leader>ss y/\V<C-r>=escape(@",'/\')<CR><CR>
 
+set scrolloff=5 " lines to cursor
+
 " Specific platform setting
 " MacOS
 if env == 'DARWIN'
