@@ -85,8 +85,10 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 " Map kj to ESC
-inoremap kj <Esc> " press kj to exit insert mode
-vnoremap kj <Esc> " press kj to exit visual mode
+" 1. press kj to exit insert mode
+inoremap kj <Esc>
+" 2. press kj to exit visual mode
+vnoremap kj <Esc>
 
 " Map leader to comma
 let mapleader = ","
