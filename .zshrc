@@ -106,7 +106,7 @@ if [[ ! -f "$HOME/.fzf/README.md" ]]; then
 fi
 # 0.4.2 ag (support vim plugin)
 if [[ ! -x "$(command -v ag)" ]]; then
-    echo "Please install ag(the silver search), visit this page https://github.com/ggreer/the_silver_searcher"
+    echo "Please install ag(the silver search) and ack(ag may need it), visit this page to install ag: https://github.com/ggreer/the_silver_searcher"
 fi 
 # 0.4.3 tldr
 if [[ ! -x "$(command -v tldr)" ]]; then
