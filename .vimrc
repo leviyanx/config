@@ -255,6 +255,13 @@ let g:syntastic_check_on_wq = 0
 " 6.3 everforest
 " 6.4 gruvbox-material
 
+" 7 Commentary
+Plug 'tpope/vim-commentary'
+" comment out current line
+nnoremap <leader>ci :Commentary<CR>
+" comment out visually selected lines
+vnoremap <leader>ci :Commentary<CR>
+
 " All of your Plugins must be added before the following line
 call plug#end()
 " End - Setting up Vundle
