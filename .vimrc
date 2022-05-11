@@ -198,31 +198,24 @@ autocmd InsertEnter * call LazyLoadingYMC()
 " 2 fzf(Fuzzy file finder)
 " 2.1 Install fzf (zsh will install it automatically)
 " 2.2 following setting
-set rtp+=~/.fzf
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-"   This is the default extra key bindings
+Plug '~/.fzf'           " enable fzf which installed by git
+Plug 'junegunn/fzf.vim' " add fzf.vim
+" This is the default extra key bindings
 let g:fzf_action = {
     \ 'ctrl-t': 'tab split',
     \ 'ctrl-x': 'split',
     \ 'ctrl-v': 'vsplit',}
-"   Default fzf layout
-"   - down / up / left / right
+" Default fzf layout
+" - down / up / left / right
 let g:fzf_layout = {'down': '~40%'}
 " quickly open files with fzf
 nnoremap <silent> <leader>kk :Files<CR>
 " open recent files with fzf
 nnoremap <silent> <leader>rr :History<CR>
+" using Rg with fzf
+nnoremap <silent> <leader>xm :Rg<CR>
 
-" 3 ag(Silver Searcher)
-" 3.1 install ag (zsh will install it automatically)
-" 3.2 ag settings
-Plug 'mileszs/ack.vim', { 'on': ['Ag', 'Ack'] }
-let g:ackprg = 'ag -vimgrep --smart-case'
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
+" 3 lacked
 
 " 4 Airline
 Plug 'vim-airline/vim-airline'
