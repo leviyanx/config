@@ -294,10 +294,18 @@ polo() {
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # key bindings for command-line
-# using fd with fzf
-export FZF_CTRL_T_COMMAND="fd . --type f"
-# CTRL-T enable: border, preview
-export FZF_CTRL_T_OPTS="--height=40% --layout=reverse --inline-info --border --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+# 1) find file or directory (using fd with fzf)
+export FZF_CTRL_T_COMMAND="fd"
+export FZF_CTRL_T_OPTS="--height=40% --layout=reverse --inline-info "
+FZF_CTRL_T_OPTS+="--border "
+# toggling between data sources
+FZF_CTRL_T_OPTS+="--prompt 'All> ' "
+FZF_CTRL_T_OPTS+="--header 'CTRL-D: Directories / CTRL-F: Files' "
+FZF_CTRL_T_OPTS+="--bind 'ctrl-d:change-prompt(Directories> )+reload(fd --type directory)' "
+FZF_CTRL_T_OPTS+="--bind 'ctrl-f:change-prompt(Files> )+reload(fd --type file)' "
+# enable preview
+FZF_CTRL_T_OPTS+="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' "
+
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 # uses tree command to show the entries of the directory
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
