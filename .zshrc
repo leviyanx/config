@@ -250,6 +250,7 @@ alias vconf="vim ~/.vimrc"
 if [[ `uname` == "Darwin" ]]; then
     alias bs="brew search"
     alias bi="brew install"
+    alias matlab="/Applications/MATLAB_R2021b.app/bin/matlab -nodesktop"
 fi
 
 # 2.2 Global Aliases
