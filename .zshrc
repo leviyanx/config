@@ -310,10 +310,8 @@ FZF_CTRL_T_OPTS+="--bind 'ctrl-f:change-prompt(Files> )+reload(fd --type file)' 
 # enable preview
 FZF_CTRL_T_OPTS+="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' "
 # 2) history using fzf
-export FZF_CTRL_R_OPTS="--height=40% --layout=reverse --inline-info --border "
+export FZF_CTRL_R_OPTS="--height=50% --layout=reverse --inline-info --border "
 FZF_CTRL_R_OPTS+="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
-# uses tree command to show the entries of the directory
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
