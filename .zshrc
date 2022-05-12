@@ -312,6 +312,22 @@ FZF_CTRL_T_OPTS+="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || 
 # 2) history using fzf
 export FZF_CTRL_R_OPTS="--height=50% --layout=reverse --inline-info --border "
 FZF_CTRL_R_OPTS+="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+# 3) fzf completion
+# Use \ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='\'
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--height=50% --border --info=inline'
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
