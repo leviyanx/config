@@ -311,8 +311,8 @@ export FZF_CTRL_T_OPTS="--height=50% --layout=reverse --inline-info --border "
 # toggling between data sources
 FZF_CTRL_T_OPTS+="--prompt 'All> ' "
 FZF_CTRL_T_OPTS+="--header 'CTRL-D: Directories / CTRL-F: Files' "
-FZF_CTRL_T_OPTS+="--bind 'ctrl-d:change-prompt(Directories> )+reload(fd --type directory)' "
-FZF_CTRL_T_OPTS+="--bind 'ctrl-f:change-prompt(Files> )+reload(fd --type file)' "
+FZF_CTRL_T_OPTS+="--bind 'ctrl-d:change-prompt(Directories> )+reload(fd --type directory --hidden --no-ignore)' "
+FZF_CTRL_T_OPTS+="--bind 'ctrl-f:change-prompt(Files> )+reload(rg --files --no-ignore --hidden)' "
 # enable preview
 FZF_CTRL_T_OPTS+="--preview 'bat --color=always --style=numbers,changes --line-range :300 {}'"
 
