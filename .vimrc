@@ -161,6 +161,9 @@ vnoremap <leader>ss y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 set scrolloff=5 " lines to cursor
 
+" use file system in vim
+nnoremap <leader>xf :Explore<CR>
+
 " Specific platform setting
 " MacOS
 if env == 'DARWIN'
