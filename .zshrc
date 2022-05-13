@@ -248,8 +248,8 @@ alias zload="exec zsh"
 alias vconf="vim ~/.vimrc"
 ## 2.1.1 MacOS
 if [[ `uname` == "Darwin" ]]; then
-    alias bs="brew search"
-    alias bi="brew install"
+    alias brs="brew search"
+    alias bri="brew install"
     alias matlab="/Applications/MATLAB_R2021b.app/bin/matlab -nodesktop"
 fi
 
