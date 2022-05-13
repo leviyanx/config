@@ -301,7 +301,9 @@ polo() {
 # fzf
 # key bindings for command-line
 # 1) find file or directory (using fd with fzf)
-export FZF_CTRL_T_COMMAND="fd"
+export FZF_DEFAULT_COMMAND="fd" # vim also use fd with fzf
+
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--height=50% --layout=reverse --inline-info --border "
 # toggling between data sources
 FZF_CTRL_T_OPTS+="--prompt 'All> ' "
@@ -310,9 +312,11 @@ FZF_CTRL_T_OPTS+="--bind 'ctrl-d:change-prompt(Directories> )+reload(fd --type d
 FZF_CTRL_T_OPTS+="--bind 'ctrl-f:change-prompt(Files> )+reload(fd --type file)' "
 # enable preview
 FZF_CTRL_T_OPTS+="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' "
+
 # 2) history using fzf
 export FZF_CTRL_R_OPTS="--height=50% --layout=reverse --inline-info --border "
 FZF_CTRL_R_OPTS+="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
 # 3) fzf completion
 # Use \ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='\'
