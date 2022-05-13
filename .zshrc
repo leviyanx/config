@@ -104,7 +104,10 @@ if [[ ! -f "$HOME/.fzf/README.md" ]]; then
     ~/.fzf/install
     echo "Successfully install fzf"
 fi
-# 0.4.2 lacked
+# 0.4.2 bat
+if [[ ! -x "$(command -v bat)" ]]; then
+    echo "Please install bat, vist this page (https://github.com/sharkdp/bat )"
+fi
 # 0.4.3 tldr
 if [[ ! -x "$(command -v tldr)" ]]; then
     echo "Please install tldr, run command: 'sudo npm install -g tldr'"
@@ -112,11 +115,11 @@ if [[ ! -x "$(command -v tldr)" ]]; then
 fi
 # 0.4.4 ripgrep (support vim plugin)
 if [[ ! -x "$(command -v rg)" ]]; then
-    echo "Please install ripgrep, visit this page https://github.com/BurntSushi/ripgrep#installation"
+    echo "Please install ripgrep, visit this page (https://github.com/BurntSushi/ripgrep#installation )"
 fi
 # 0.4.5 fd (alternative to find)
 if [[ ! -x "$(command -v fd)" ]]; then
-    echo "Please install fd. If you use MacOS, you can install it with brew, otherwise visit this page https://github.com/sharkdp/fd"
+    echo "Please install fd. If you use MacOS, you can install it with brew, otherwise visit this page (https://github.com/sharkdp/fd )"
 fi
 # 0.4.6 vim-plug (support vim plugin)
 if [[ ! -f "$HOME/.vim/autoload/plug.vim" ]]; then
@@ -311,7 +314,7 @@ FZF_CTRL_T_OPTS+="--header 'CTRL-D: Directories / CTRL-F: Files' "
 FZF_CTRL_T_OPTS+="--bind 'ctrl-d:change-prompt(Directories> )+reload(fd --type directory)' "
 FZF_CTRL_T_OPTS+="--bind 'ctrl-f:change-prompt(Files> )+reload(fd --type file)' "
 # enable preview
-FZF_CTRL_T_OPTS+="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' "
+FZF_CTRL_T_OPTS+="--preview 'bat --color=always --style=numbers,changes --line-range :300 {}'"
 
 # 2) history using fzf
 export FZF_CTRL_R_OPTS="--height=50% --layout=reverse --inline-info --border "
