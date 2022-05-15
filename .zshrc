@@ -19,6 +19,7 @@ export https_proxy="127.0.0.1:12346"
 
 # Set Path so that '/usr/local/bin' appears before '/usr/bin'
 export PATH="/usr/local/bin:$PATH" 
+export PATH="$PATH:$HOME/.local/bin"
 # python version
 export PATH="/usr/local/opt/python@3.10/bin:$PATH" 
 # Path to your oh-my-zsh installation.
