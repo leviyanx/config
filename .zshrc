@@ -37,13 +37,28 @@ export NVM_DIR="$HOME/.nvm"
 
 # custom machine settings
 if [[ ! -f "$HOME/.guest-machine-settings.sh" ]]; then
-    echo "If this is a guest machine, paste these commands to ~/.guest-machine-settings.sh:"
-    echo "unset http_proxy"
-    echo "unset https_proxy"
-    echo "================="
-    echo "and install: python 3.10, node 18.0.0"
-    echo "====================================="
-    echo "If this is not a guest machine, create this file but leave it content blank"
+    while true; do
+        # ask if this is a guest machine
+        vared -p "Is this a guest machine (not your host machine), y/n: " -c ans
+        if [[ "y" == $ans ]]; then
+            # this is a guest machine
+            # write settings into the setting file
+            echo "unset http_proxy" > "$HOME/.guest-machine-settings.sh"
+            echo "unset https_proxy" >> "$HOME/.guest-machine-settings.sh"
+            echo "\nGuest machine settings are finished."
+            # remind to install some necessary programs
+            echo "Then please install: python 3.10, node 18.0.0\n"
+            break
+        elif [[ "n" == $ans ]]; then
+            # this is a host machine
+            echo "" > "$HOME/.guest-machine-settings.sh"
+            echo "\nGuest machine settings are finished."
+            break
+        else
+            echo "\nPlease delete your input, and enter y or n.\n"
+            continue
+        fi
+    done
 fi
 source ~/.guest-machine-settings.sh
 
