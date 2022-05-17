@@ -164,6 +164,9 @@ set scrolloff=5 " lines to cursor
 " use file system in vim
 nnoremap <leader>xf :Explore<CR>
 
+" open a vertical terminal in vim
+nnoremap <leader>xz :vert term<CR>
+
 " Specific platform setting
 " MacOS
 if env == 'DARWIN'
