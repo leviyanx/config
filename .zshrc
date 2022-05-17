@@ -270,6 +270,7 @@ if [[ `uname` == "Darwin" ]]; then
     alias brs="brew search"
     alias bri="brew install"
     alias matlab="/Applications/MATLAB_R2021b.app/bin/matlab -nodesktop"
+    alias comsol_matlab="/Applications/MATLAB_R2021b.app/bin/matlab"
 fi
 
 # 2.2 Global Aliases
