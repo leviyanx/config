@@ -33,7 +33,10 @@
 !.vim/autoload/onedark.vim
 !.vim/autoload/everforest.vim
 !.vim/autoload/gruvbox_material.vim
-
+# ranger
+!.config/
+.config/*
+!.config/ranger/
 
 
 

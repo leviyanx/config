@@ -34,6 +34,9 @@ export PATH=~/.nvm/versions/node/v18.0.0/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ranger
+# only load custom configs
+export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # custom machine settings
 if [[ ! -f "$HOME/.guest-machine-settings.sh" ]]; then
