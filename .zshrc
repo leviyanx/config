@@ -145,6 +145,10 @@ if [[ ! -f "$HOME/.vim/autoload/plug.vim" ]]; then
     echo "====================="
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
+# 0.4.7 ranger
+if [[ ! -x "$(command -v ranger)" ]]; then
+    echo "Please install ranger, install it through Pypl: pip install ranger-fm, or visit this page (https://github.com/BurntSushi/ripgrep#installation ) to learn other methods"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -265,6 +269,7 @@ alias tl="tldr"
 alias zconf="vim ~/.zshrc"
 alias zload="exec zsh"
 alias vconf="vim ~/.vimrc"
+alias r="ranger"
 ## 2.1.1 MacOS
 if [[ `uname` == "Darwin" ]]; then
     alias brs="brew search"
