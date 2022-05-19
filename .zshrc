@@ -272,7 +272,7 @@ alias tl="tldr"
 alias zconf="vim ~/.zshrc"
 alias zload="exec zsh"
 alias vconf="vim ~/.vimrc"
-alias r="ranger"
+alias r=". ranger"
 ## 2.1.1 MacOS
 if [[ `uname` == "Darwin" ]]; then
     alias brs="brew search"
