@@ -232,7 +232,7 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=kj # map kj to <Esc> in insert mode
 ZVM_VI_VISUAL_ESCAPE_BINDKEY=kj # map kj to <Esc> in visual mode
 # The plugin will auto execute this zvm_after_init function
 function zvm_after_init() {
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 }
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -275,8 +275,8 @@ alias vconf="vim ~/.vimrc"
 alias r=". ranger"
 ## 2.1.1 MacOS
 if [[ `uname` == "Darwin" ]]; then
-    alias brs="brew search"
-    alias bri="brew install"
+    alias brse="brew search"
+    alias brin="brew install"
     alias matlab="/Applications/MATLAB_R2021b.app/bin/matlab -nodesktop"
     alias comsol_matlab="/Applications/MATLAB_R2021b.app/bin/matlab"
 fi
@@ -361,6 +361,3 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
-
-# autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
