@@ -150,7 +150,7 @@ if [[ ! -f "$HOME/.vim/autoload/plug.vim" ]]; then
 fi
 # 0.4.7 ranger
 if [[ ! -x "$(command -v ranger)" ]]; then
-    echo "Please install ranger, install it through Pypl: pip install ranger-fm, or visit this page (https://github.com/BurntSushi/ripgrep#installation ) to learn other methods"
+    echo "Please install ranger, install it through Pypl: pip install ranger-fm, or visit this page (https://github.com/ranger/ranger#installing ) to learn other methods"
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
