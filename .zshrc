@@ -38,7 +38,7 @@ export NVM_DIR="$HOME/.nvm"
 # only load custom configs
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
-# custom machine settings
+# guest machine settings
 if [[ ! -f "$HOME/.guest-machine-settings.sh" ]]; then
     while true; do
         # ask if this is a guest machine

@@ -168,8 +168,8 @@ nnoremap <leader>xf :Explore<CR>
 nnoremap <leader>xz :vert term<CR>
 
 " Specific platform setting
-" MacOS
 if env == 'DARWIN'
+    " MacOS
     " Set python
     let g:python_host_skip_check = 1 " skip check to speed up loading
     let g:python_host_prog='/usr/bin/python'
@@ -177,6 +177,7 @@ if env == 'DARWIN'
     let g:python3_host_prog='/usr/bin/python3'
     " racer cmd path
     let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
+ 
 elseif env == "WINDOWS"
     " Set python
     " racer cmd path
