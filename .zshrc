@@ -272,7 +272,7 @@ alias tl="tldr"
 alias zconf="vim ~/.zshrc"
 alias zload="exec zsh"
 alias vconf="vim ~/.vimrc"
-alias r=". ranger"
+alias r="ranger"
 ## 2.1.1 MacOS
 if [[ `uname` == "Darwin" ]]; then
     alias brse="brew search"
@@ -360,4 +360,21 @@ _fzf_compgen_path() {
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+# ranger: shell changes the directory only when quitting ranger with keybinding capital Q
+function ranger {
+    local IFS=$'\t\n'
+    local tempfile="$(mktemp -t tmp.XXXXXX)"
+    local ranger_cmd=(
+        command
+        ranger
+        --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
+    )
+    
+    ${ranger_cmd[@]} "$@"
+    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]]; then
+        cd -- "$(cat "$tempfile")" || return
+    fi
+    command rm -f -- "$tempfile" 2>/dev/null
 }
