@@ -161,9 +161,6 @@ vnoremap <leader>ss y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 set scrolloff=5 " lines to cursor
 
-" use file system in vim
-nnoremap <leader>xf :Explore<CR>
-
 " open a vertical terminal in vim
 nnoremap <leader>xz :vert term<CR>
 
@@ -217,14 +214,17 @@ let g:fzf_action = {
 " Default fzf layout
 " - down / up / left / right
 let g:fzf_layout = {'down': '~40%'}
-" quickly open files with fzf
-nnoremap <silent> <leader>kk :Files<CR>
+" quickly open files with fzf (whether in NERDTree or not)
+nnoremap <silent> <expr> <Leader>kk (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
 " open recent files with fzf
 nnoremap <silent> <leader>rr :History<CR>
 " using Rg with fzf
 nnoremap <silent> <leader>xm :Rg<CR>
 
-" 3 lacked
+" 3 NerdTree
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" use NerdTree as file system in vim
+nnoremap <leader>xf :NERDTreeToggle<CR>
 
 " 4 Airline
 Plug 'vim-airline/vim-airline'
