@@ -195,14 +195,14 @@ call plug#begin('~/.vim/plugged')
 " Visit this page(https://github.com/ycm-core/YouCompleteMe) to complete YCM installation
 Plug 'Valloric/YouCompleteMe', { 'on': [] }
 " Lazy load: load YCM until press `i`(to insert)
-let g:YouCompleteMeLazyLoaded = 0
-function! LazyLoadingYMC()
-    if g:YouCompleteMeLazyLoaded == 0
-        g:YouCompleteMeLazyLoaded = 1
-        call plug#load('YouCompleteMe') | call youcompleteme#Enable()
+autocmd! InsertEnter * call InitYCM()
+let g:load_ycm_done = 0
+function! InitYCM()
+    if g:load_ycm_done == 0
+        g:load_ycm_done = 1
+        call plug#load('YouCompleteMe')
     endif
 endfunction
-autocmd InsertEnter * call LazyLoadingYMC()
 
 " 2 fzf(Fuzzy file finder)
 " 2.1 Install fzf (zsh will install it automatically)
