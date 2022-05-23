@@ -287,6 +287,10 @@ alias zload="exec zsh"
 alias vconf="vim ~/.vimrc"
 alias r="ranger"
 alias lg="lazygit"
+# Overwrite existing commands for better defaults
+alias mv="mv -i"           # -i prompts before overwrite
+alias mkdir="mkdir -p"     # -p make parent dirs as needed
+alias df="df -h"           # -h prints human readable format
 ## 2.1.1 MacOS
 if [[ `uname` == "Darwin" ]]; then
     alias brse="brew search"
