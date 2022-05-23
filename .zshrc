@@ -158,6 +158,10 @@ fi
 if [[ ! -x "$(command -v lazygit)" ]]; then
     echo "Please install lazygit, visit this page (https://github.com/jesseduffield/lazygit#installation )"
 fi
+# 0.4.9 autojump
+if [[ ! -x "$(command -v autojump)" ]]; then
+    echo "Please install autojump, visit this page (https://github.com/wting/autojump#manual )"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -238,7 +242,10 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=kj # map kj to <Esc> in insert mode
 ZVM_VI_VISUAL_ESCAPE_BINDKEY=kj # map kj to <Esc> in visual mode
 # The plugin will auto execute this zvm_after_init function
 function zvm_after_init() {
+    # fzf
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    # autojump
+    [[ -s /Users/leviyan/.autojump/etc/profile.d/autojump.sh ]] && source /Users/leviyan/.autojump/etc/profile.d/autojump.sh
 }
 
 # export MANPATH="/usr/local/man:$MANPATH"
