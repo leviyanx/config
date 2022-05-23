@@ -263,7 +263,7 @@ let g:syntastic_check_on_wq = 0
 " 6.4 gruvbox-material
 
 " 7 Commentary
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary', { 'on': 'Commentary' }
 " comment out current line
 nnoremap <leader>ci :Commentary<CR>
 " comment out visually selected lines
