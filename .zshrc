@@ -154,6 +154,10 @@ fi
 if [[ ! -x "$(command -v ranger)" ]]; then
     echo "Please install ranger, install it through Pypl: pip install ranger-fm, or visit this page (https://github.com/ranger/ranger#installing ) to learn other methods"
 fi
+# 0.4.8 lazygit
+if [[ ! -x "$(command -v lazygit)" ]]; then
+    echo "Please install lazygit, visit this page (https://github.com/jesseduffield/lazygit#installation )"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -275,6 +279,7 @@ alias zconf="vim ~/.zshrc"
 alias zload="exec zsh"
 alias vconf="vim ~/.vimrc"
 alias r="ranger"
+alias lg="lazygit"
 ## 2.1.1 MacOS
 if [[ `uname` == "Darwin" ]]; then
     alias brse="brew search"
