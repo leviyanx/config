@@ -59,3 +59,8 @@ class fzf_select(Command):
                 self.fm.cd(selected)
             else:
                 self.fm.select_file(selected)
+
+class toggleVCS(Command):
+    def execute(self):
+        self.fm.execute_console("set vcs_aware!")
+        self.fm.execute_console("reload_cwd")
