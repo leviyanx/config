@@ -37,6 +37,13 @@
 !.config/
 .config/*
 !.config/ranger/
-
+# lazygit (macos)
+!Library
+Library/*
+!Library/Application Support
+Library/Application Support/*
+!Library/Application Support/lazygit
+Library/Application Support/lazygit/*
+Library/Application Support/lazygit/config.yml
 
 
