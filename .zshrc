@@ -242,7 +242,7 @@ function zvm_after_init() {
     # fzf
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
     # autojump
-    [[ -s /Users/leviyan/.autojump/etc/profile.d/autojump.sh ]] && source /Users/leviyan/.autojump/etc/profile.d/autojump.sh
+    [[ -s "$HOME/.autojump/etc/profile.d/autojump.sh" ]] && source "$HOME/.autojump/etc/profile.d/autojump.sh"
     # detect autojump installation
     if [[ ! -x "$(command -v autojump)" ]]; then
         echo "Please install autojump, visit this page (https://github.com/wting/autojump#manual )"
