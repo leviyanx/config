@@ -15,3 +15,5 @@
 4. [Vim](https://www.vim.org/): `.vimrc` and `.vim`(colors, autoload, after)
 5. Settings for [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim): `.ideavimrc`
 6. [Ranger](https://github.com/ranger/ranger): `~/.config/ranger`
+7. [Lazygit](https://github.com/jesseduffield/lazygit)
+   1. macOS: `~/Library/Application support/lazygit`
