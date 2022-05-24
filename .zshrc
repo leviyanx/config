@@ -158,10 +158,7 @@ fi
 if [[ ! -x "$(command -v lazygit)" ]]; then
     echo "Please install lazygit, visit this page (https://github.com/jesseduffield/lazygit#installation )"
 fi
-# 0.4.9 autojump
-if [[ ! -x "$(command -v autojump)" ]]; then
-    echo "Please install autojump, visit this page (https://github.com/wting/autojump#manual )"
-fi
+# 0.4.9 autojump (the code for detecting installation after sourcing autojump.sh)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -246,6 +243,10 @@ function zvm_after_init() {
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
     # autojump
     [[ -s /Users/leviyan/.autojump/etc/profile.d/autojump.sh ]] && source /Users/leviyan/.autojump/etc/profile.d/autojump.sh
+    # detect autojump installation
+    if [[ ! -x "$(command -v autojump)" ]]; then
+        echo "Please install autojump, visit this page (https://github.com/wting/autojump#manual )"
+    fi
 }
 
 # export MANPATH="/usr/local/man:$MANPATH"
