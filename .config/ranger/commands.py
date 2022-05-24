@@ -95,3 +95,25 @@ class mkcd(Command):
                     self.fm.execute_console('scout -ae ^{}$'.format(s))
         else:
             self.fm.notify("file/directory exists!", bad=True)
+
+class code_dir(Command):
+  """
+  :code_dir
+  Opens current directory in VSCode
+  """
+
+  def execute(self):
+    dirname = self.fm.thisdir.path
+    codecmd = ["code", dirname]
+    self.fm.execute_command(codecmd)
+
+class code_file(Command):
+    """
+    :code_file
+    Open current file in vscode (if dir is pointed, this also can open it)
+    """
+
+    def execute(self):
+        filepath = self.fm.thisfile.path
+        codecmd = ["code", filepath]
+        self.fm.execute_command(codecmd)
