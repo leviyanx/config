@@ -117,3 +117,16 @@ class code_file(Command):
         filepath = self.fm.thisfile.path
         codecmd = ["code", filepath]
         self.fm.execute_command(codecmd)
+
+class open_dir_with_system_file_manager(Command):
+    """
+    :open_dir_with_system_file_manager
+    Open current directory in system file manager.
+    """
+
+    def execute(self):
+        import os
+
+        if os.uname().sysname == 'Darwin':
+            # macOS: open with finder
+            self.fm.execute_command("open .")
