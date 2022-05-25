@@ -200,6 +200,8 @@ function! InitYCM()
         call plug#load('YouCompleteMe')
     endif
 endfunction
+" press enter to select
+inoremap <expr> <Enter> pumvisible() ? "<Esc>a" : "<Enter>"
 
 " 2 fzf(Fuzzy file finder)
 " 2.1 Install fzf (zsh will install it automatically)
