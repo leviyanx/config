@@ -105,9 +105,6 @@ set expandtab               " On pressing tab, insert 4 spaces
 " Not extend tab to 4 spaces in Makefile
 autocmd FileType make setlocal noexpandtab
 
-" Map shift-tab to inverse tab for insert mode
-inoremap <S-Tab> <C-d> 
-
 " Split screening
 set splitbelow
 set splitright
@@ -133,14 +130,6 @@ nnoremap ,wk <C-W>k
 " Ps = 6  -> steady bar (xterm).
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
-
-" Rename variable
-" (1) Place cursor at name to rename and type
-" (2) For local replace/ global repalce
-" `gr`/`gR` then type new name + <esc> to rename variable declaration, then use `.` to rename next occurrence(s)
-" or `:%norm .` to rename all occurrence in the buffer at once.
-nnoremap gr gdcgn
-nnoremap gR gDcgn
 
 set cursorline " highlight current line
 
@@ -188,20 +177,90 @@ call plug#begin('~/.vim/plugged')
 
 " Keep Plugin commands between plug#begin/end
 " ----------- Add Plugin Declaration Here ----------
-" 1 YouCompleteMe
-" Visit this page(https://github.com/ycm-core/YouCompleteMe) to complete YCM installation
-Plug 'Valloric/YouCompleteMe', { 'on': [] }
-" Lazy load: load YCM until press `i`(to insert)
-autocmd! InsertEnter * call InitYCM()
-let g:load_ycm_done = 0
-function! InitYCM()
-    if g:load_ycm_done == 0
-        g:load_ycm_done = 1
-        call plug#load('YouCompleteMe')
-    endif
+
+" 1 coc
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" coc settings
+let g:coc_global_extensions = [
+            \ 'coc-marketplace',
+            \ 'coc-diagnostic',
+            \ 'coc-git',
+            \ 'coc-gitignore',
+            \ 'coc-python',
+            \ 'coc-java',
+            \ 'coc-rls',
+            \ 'coc-rust-analyzer',
+            \ 'coc-json',
+            \ 'coc-vimlsp']
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=number
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-" press enter to select
-inoremap <expr> <Enter> pumvisible() ? "<Esc>a" : "<Enter>"
+" Use <c-o> to trigger completion.
+inoremap <silent><expr> <c-o> coc#refresh()
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+" Run the Code Lens action on te current line.
+nmap <leader>cl  <Plug>(coc-codelens-action)
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
 " 2 fzf(Fuzzy file finder)
 " 2.1 Install fzf (zsh will install it automatically)
@@ -250,11 +309,6 @@ nmap <leader>5 <Plug>AirlineSelectTab5
 " 5.1 Rust.vim
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 let g:rustfmt_autosave = 1 " automatically formatted for standard style
-" 5.2 Syntastic (Check syntax error)
-Plug 'vim-syntastic/syntastic'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
 
 " 6 Theme plugin 
 "   Not use vundle to install theme, but manually install it
