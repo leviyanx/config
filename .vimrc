@@ -325,6 +325,12 @@ nnoremap <leader>ci :Commentary<CR>
 " comment out visually selected lines
 vnoremap <leader>ci :Commentary<CR>
 
+" 8 expand region
+Plug 'terryma/vim-expand-region'
+" smart select
+map <leader>xx <Plug>(expand_region_expand)
+map <leader>zz <Plug>(expand_region_shrink)
+
 " All of your Plugins must be added above the following line
 call plug#end()
 " End - Setting up Plug-Vim
