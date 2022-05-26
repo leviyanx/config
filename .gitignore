@@ -20,9 +20,10 @@
 !.config/
 .config/*
 !.config/alacritty/
-#  Vim theme
+# Vim
 !.vim/
 .vim/*
+# vim theme
 !.vim/colors
 !.vim/after
 !.vim/autoload
@@ -33,6 +34,8 @@
 !.vim/autoload/onedark.vim
 !.vim/autoload/everforest.vim
 !.vim/autoload/gruvbox_material.vim
+# coc settings
+!.vim/coc-settings.json
 # ranger
 !.config/
 .config/*
