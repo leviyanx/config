@@ -263,6 +263,8 @@ inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float
 inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+" coc-explorer
+nmap <leader>xf :CocCommand explorer<CR>
 
 " 2 fzf(Fuzzy file finder)
 " 2.1 Install fzf (zsh will install it automatically)
@@ -284,10 +286,7 @@ nnoremap <silent> <leader>rr :History<CR>
 " using Rg with fzf
 nnoremap <silent> <leader>xm :Rg<CR>
 
-" 3 NerdTree
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-" use NerdTree as file system in vim
-nnoremap <leader>xf :NERDTreeToggle<CR>
+" 3 lacked
 
 " 4 Airline
 Plug 'vim-airline/vim-airline'
