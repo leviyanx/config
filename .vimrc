@@ -185,9 +185,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = [
             \ 'coc-marketplace',
             \ 'coc-diagnostic',
+            \ 'coc-explorer',
             \ 'coc-git',
             \ 'coc-gitignore',
             \ 'coc-python',
+            \ 'coc-pyright',
             \ 'coc-java',
             \ 'coc-rls',
             \ 'coc-rust-analyzer',
