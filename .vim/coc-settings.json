@@ -36,5 +36,20 @@
         "python"
     ],
     "coc.source.file.enable": true,
-    "coc.source.file.ignoreHidden": false
+    "coc.source.file.ignoreHidden": false,
+    "explorer.file.showHiddenFiles": true,
+    "explorer.keyMappings.global": {
+        "gu": "gotoParent",
+        "cw": "rename",
+        "<space>": "toggleSelection",
+        "yy": "copytFile",
+        "yf": "copyFilename",
+        "yp": "copyFilepath",
+        "dd": "cutFile",
+        "pp": "pasteFile",
+        "dD": "deleteForever",
+        "T": "addFile",
+        "M": "addDirectory",
+        "R": "refresh"
+    }
 }
