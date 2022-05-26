@@ -117,7 +117,7 @@ if [[ ! -d "$HOME/powerlevel10k" ]]; then
 fi
 
 # 0.4 Shell tools
-install_npm_suggestion="If haven't installed npm, you can use nvm to install it, visit this page to learn how install nvm \n(https://github.com/nvm-sh/nvm#installing-and-updating ), then run 'nvm install node' to install npm"
+install_npm_suggestion="If haven't installed npm, you can use nvm to install it, visit this page to learn how install nvm \n(https://github.com/nvm-sh/nvm#installing-and-updating ), then run 'nvm install node' to install npm\nAfter that, if this is a host machine, execute: npm config set proxy http://127.0.0.1:12346"
 # 0.4.1 fzf (support vim plugin)
 if [[ ! -f "$HOME/.fzf/README.md" ]]; then
     echo "Installing fzf .."
