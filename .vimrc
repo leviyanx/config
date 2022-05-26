@@ -332,6 +332,10 @@ Plug 'terryma/vim-expand-region'
 map <leader>xx <Plug>(expand_region_expand)
 map <leader>zz <Plug>(expand_region_shrink)
 
+" 9 matlab support 
+" this plugin must use with tmux
+Plug 'MortenStabenau/matlab-vim', { 'for': 'matlab'}
+
 " All of your Plugins must be added above the following line
 call plug#end()
 " End - Setting up Plug-Vim
