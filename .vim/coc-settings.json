@@ -34,5 +34,7 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
         "python"
-    ]
+    ],
+    "coc.source.file.enable": true,
+    "coc.source.file.ignoreHidden": false
 }
