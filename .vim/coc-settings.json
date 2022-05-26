@@ -1,5 +1,6 @@
 {
     "coc.preferences.extensionUpdateCheck": "weekly",
+    "suggest.maxCompleteItemCount": 10,
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
     "suggest.completionItemKindLabels": {
