@@ -367,6 +367,10 @@ let g:rnvimr_action = {
             \ 'yw': 'EmitRangerCwd'
             \ }
 
+" 12 undotree
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+nnoremap <F5> :UndotreeToggle<CR>
+
 " All of your Plugins must be added above the following line
 call plug#end()
 " End - Setting up Plug-Vim
