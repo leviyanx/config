@@ -285,7 +285,7 @@ alias tl="tldr"
 alias zconf="$EDITOR ~/.zshrc"
 alias zload="exec zsh"
 alias tconf="$EDITOR $HOME/.tmux.conf"
-alias tload="tmux source $HOME/.tmux.conf"
+alias tload="tmux source-file $HOME/.tmux.conf"
 alias r="ranger"
 alias lg="lazygit"
 # Overwrite existing commands for better defaults
