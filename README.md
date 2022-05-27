@@ -24,3 +24,6 @@ Extra
 1. [alacritty-theme-switch](https://github.com/tichopad/alacritty-theme-switch): conveniently switch alacritty themes
     1. install: `npm install -g alacritty-theme-switch`
     2. usage: run `alacritty-theme-switch` or `ats`
+2. font: [ sauce-code-pro-nerd-font ](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
+    1. install
+        1. macOS: `brew tap homebrew/cask-fonts`, `brew install --cask font-sauce-code-pro-nerd-font`
