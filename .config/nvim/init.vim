@@ -371,6 +371,9 @@ let g:rnvimr_action = {
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 nnoremap <F5> :UndotreeToggle<CR>
 
+" 13 vim-surround
+Plug 'tpope/vim-surround'
+
 " All of your Plugins must be added above the following line
 call plug#end()
 " End - Setting up Plug-Vim
