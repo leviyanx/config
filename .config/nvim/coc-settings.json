@@ -39,6 +39,7 @@
     "coc.source.file.enable": true,
     "coc.source.file.ignoreHidden": false,
     "explorer.file.showHiddenFiles": true,
+    "explorer.icon.enableNerdfont": true,
     "explorer.keyMappings.global": {
         "gu": "gotoParent",
         "cw": "rename",
