@@ -12,8 +12,9 @@
 1. [Zsh](https://www.zsh.org/): `.zshrc`
 2. [Powerlevel10k](https://github.com/romkatv/powerlevel10k): `.zshrc` and `.p10k.zsh`
 3. [Alacritty](https://github.com/alacritty/alacritty): `~/.config/alacritty`
-4. [Vim](https://www.vim.org/): `.vimrc` and `.vim`(colors, autoload, after)
+4. (Deprecated) [Vim](https://www.vim.org/): `.vimrc` and `.vim`(colors, autoload, after)
 5. Settings for [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim): `.ideavimrc`
 6. [Ranger](https://github.com/ranger/ranger): `~/.config/ranger`
 7. [Lazygit](https://github.com/jesseduffield/lazygit)
    1. macOS: `~/Library/Application support/lazygit`
+8. [Neovim](https://neovim.io/): `~/.config/nvim`
