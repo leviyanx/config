@@ -12,6 +12,8 @@
 !.vimrc
 # vim settings for IdeaVim
 !.ideavimrc
+# tmux
+!.tmux.conf
 
 # Whitelist
 # trailing "/" is optional for folders, may match file though.

@@ -149,7 +149,10 @@ fi
 if [[ ! -x "$(command -v fd)" ]]; then
     echo "Please install fd. If you use MacOS, you can install it with brew, otherwise visit this page (https://github.com/sharkdp/fd )"
 fi
-# 0.4.6 lacked
+# 0.4.6 tmux
+if [[ ! -x "$(command -v tmux)" ]]; then
+    echo "Please install tmux. visit this page (https://github.com/tmux/tmux#installation )"
+fi
 # 0.4.7 ranger
 if [[ ! -x "$(command -v ranger)" ]]; then
     echo "Please install ranger, install it through Pypl: pip install ranger-fm, or visit this page (https://github.com/ranger/ranger#installing ) to learn other methods"
