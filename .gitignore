@@ -62,6 +62,7 @@
 !.config/nvim/autoload/plug.vim
 # ranger
 !.config/ranger/
+.config/ranger/__pycache__
 .config/ranger/plugins/__pycache__/*
 # lazygit (macos)
 !Library
