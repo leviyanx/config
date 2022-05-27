@@ -348,6 +348,23 @@ Plug 'kdheepak/lazygit.nvim'
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>l :LazyGit<CR>
 
+" 11 ranger
+Plug 'kevinhwang91/rnvimr'
+nnoremap <c-o> :RnvimrToggle<CR>
+tnoremap <silent> <c-o> <C-\><C-n>:RnvimrToggle<CR>
+" Make Ranger to be hidden after picking a file
+let g:rnvimr_enable_picker = 1
+" Disable a border for floating window
+let g:rnvimr_draw_border = 0
+" Map Rnvimr action
+let g:rnvimr_action = {
+            \ '<C-t>': 'NvimEdit tabedit',
+            \ '<C-x>': 'NvimEdit split',
+            \ '<C-v>': 'NvimEdit vsplit',
+            \ 'gw': 'JumpNvimCwd',
+            \ 'yw': 'EmitRangerCwd'
+            \ }
+
 " All of your Plugins must be added above the following line
 call plug#end()
 " End - Setting up Plug-Vim
