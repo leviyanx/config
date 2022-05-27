@@ -30,6 +30,8 @@
 !.vim/autoload/onedark.vim
 !.vim/autoload/everforest.vim
 !.vim/autoload/gruvbox_material.vim
+# vim plug-vim
+!.vim/autoload/plug.vim
 # coc settings
 !.vim/coc-settings.json
 
@@ -56,6 +58,8 @@
 !.config/nvim/autoload/onedark.vim
 !.config/nvim/autoload/everforest.vim
 !.config/nvim/autoload/gruvbox_material.vim
+# nvim plug-vim
+!.config/nvim/autoload/plug.vim
 # ranger
 !.config/ranger/
 .config/ranger/plugins/__pycache__/*

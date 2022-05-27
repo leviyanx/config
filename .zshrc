@@ -147,14 +147,7 @@ fi
 if [[ ! -x "$(command -v fd)" ]]; then
     echo "Please install fd. If you use MacOS, you can install it with brew, otherwise visit this page (https://github.com/sharkdp/fd )"
 fi
-# 0.4.6 vim-plug (support vim plugin)
-if [[ ! -f "$HOME/.vim/autoload/plug.vim" ]]; then
-    echo "Installing plug-vim .."
-    echo "======================"
-    echo -e "Or if you want to download the file manually (especially in a custom machine that lack proxy, \nexecute these commands: \n(1) git clone https://github.com/junegunn/vim-plug.git ~/vim-plug \n(2) mkdir ~/.vim/autoload \n(3) mv ~/vim-plug/plug.vim ~/.vim/autoload/ \n(4) rm -rf ~/vim-plug"
-    echo "====================="
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
+# 0.4.6 lacked
 # 0.4.7 ranger
 if [[ ! -x "$(command -v ranger)" ]]; then
     echo "Please install ranger, install it through Pypl: pip install ranger-fm, or visit this page (https://github.com/ranger/ranger#installing ) to learn other methods"
