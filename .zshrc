@@ -21,7 +21,12 @@ export https_proxy="127.0.0.1:12346"
 export PATH="/usr/local/bin:$PATH" 
 export PATH="$PATH:$HOME/.local/bin"
 # set default editor
-export EDITOR=vim
+if [[ -x "$(command -v nvim)" ]]; then
+    export EDITOR=nvim
+else
+    echo "Please install nvim, visit this page (https://github.com/neovim/neovim/wiki/Installing-Neovim )"
+    export EDITOR=vim
+fi
 # python version
 export PATH="/usr/local/opt/python@3.10/bin:$PATH" 
 # Path to your oh-my-zsh installation.
@@ -158,7 +163,6 @@ fi
 if [[ ! -x "$(command -v lazygit)" ]]; then
     echo "Please install lazygit, visit this page (https://github.com/jesseduffield/lazygit#installation )"
 fi
-# 0.4.9 autojump (the code for detecting installation after sourcing autojump.sh)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]

@@ -16,10 +16,6 @@
 # Whitelist
 # trailing "/" is optional for folders, may match file though.
 # "/" is NOT optional when followed by a *
-# Alacritty
-!.config/
-.config/*
-!.config/alacritty/
 # Vim
 !.vim/
 .vim/*
@@ -36,9 +32,31 @@
 !.vim/autoload/gruvbox_material.vim
 # coc settings
 !.vim/coc-settings.json
-# ranger
+
+# dot config
 !.config/
 .config/*
+# Alacritty
+!.config/alacritty/
+# nvim
+!.config/nvim/
+.config/nvim/*
+# coc settings
+!.config/nvim/coc-settings.json
+# nvim settings
+!.config/nvim/init.vim
+# nvim theme
+!.config/nvim/colors
+!.config/nvim/after
+!.config/nvim/autoload
+.config/nvim/autoload/*
+!.config/nvim/autoload/airline
+!.config/nvim/autoload/lightline
+!.config/nvim/autoload/dracula.vim
+!.config/nvim/autoload/onedark.vim
+!.config/nvim/autoload/everforest.vim
+!.config/nvim/autoload/gruvbox_material.vim
+# ranger
 !.config/ranger/
 .config/ranger/plugins/__pycache__/*
 # lazygit (macos)
@@ -49,5 +67,3 @@ Library/Application Support/*
 !Library/Application Support/lazygit
 Library/Application Support/lazygit/*
 Library/Application Support/lazygit/config.yml
-
-
