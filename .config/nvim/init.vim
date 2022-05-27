@@ -179,7 +179,7 @@ elseif env == "Linux"
 endif
 
 " START - Setting up Vim-Plug
-call plug#begin('~/.vim/plugged')
+call plug#begin('$HOME/.config/nvim/plugged')
 
 " Keep Plugin commands between plug#begin/end
 " ----------- Add Plugin Declaration Here ----------
