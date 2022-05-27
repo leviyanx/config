@@ -23,3 +23,4 @@ Extra
 
 1. [alacritty-theme-switch](https://github.com/tichopad/alacritty-theme-switch): conveniently switch alacritty themes
     1. install: `npm install -g alacritty-theme-switch`
+    2. usage: run `alacritty-theme-switch` or `ats`
