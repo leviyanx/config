@@ -153,6 +153,15 @@ set scrolloff=5 " lines to cursor
 " open a vertical terminal in vim
 nnoremap <leader>xz :vert term<CR>
 
+" Basic mappings
+noremap ; :
+nnoremap Q :q<CR>
+nnoremap <leader>w :w<CR>
+" Open the vimrc file anytime
+nnoremap <leader>ev :e $HOME/.vimrc<CR>
+" Open the zshrc file anytime
+nnoremap <leader>ez :e $HOME/.zshrc<CR>
+
 " Specific platform setting
 if env == 'DARWIN'
     " MacOS
