@@ -369,6 +369,14 @@ let g:rnvimr_action = {
 call plug#end()
 " End - Setting up Plug-Vim
 
-" theme
-set background=dark " for everforest or gruvbox-material theme
-colorscheme gruvbox-material
+" automatic switch between light and dark theme
+function! SetBackground()
+    let hour = strftime("%H")
+    if 6 <= hour && hour < 18
+        set background=light
+    else
+        set background=dark
+    endif
+    colorscheme gruvbox-material
+endfunction
+call SetBackground()
