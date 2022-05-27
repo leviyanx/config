@@ -23,9 +23,11 @@ export PATH="$PATH:$HOME/.local/bin"
 # set default editor
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
+    alias vconf="nvim ~/.config/nvim/init.vim"
 else
     echo "Please install nvim, visit this page (https://github.com/neovim/neovim/wiki/Installing-Neovim )"
     export EDITOR=vim
+    alias vconf="vim ~/.vimrc"
 fi
 # python version
 export PATH="/usr/local/opt/python@3.10/bin:$PATH" 
@@ -280,9 +282,8 @@ alias la="ls -aG"
 alias ll="ls -alhG"
 alias f="fzf"
 alias tl="tldr"
-alias zconf="vim ~/.zshrc"
+alias zconf="$EDITOR ~/.zshrc"
 alias zload="exec zsh"
-alias vconf="vim ~/.vimrc"
 alias r="ranger"
 alias lg="lazygit"
 # Overwrite existing commands for better defaults
