@@ -343,6 +343,11 @@ map <leader>zz <Plug>(expand_region_shrink)
 " this plugin must use with tmux
 Plug 'MortenStabenau/matlab-vim', { 'for': 'matlab'}
 
+" 10 lazygit
+Plug 'kdheepak/lazygit.nvim'
+" setup mapping to call :LazyGit
+nnoremap <silent> <leader>l :LazyGit<CR>
+
 " All of your Plugins must be added above the following line
 call plug#end()
 " End - Setting up Plug-Vim
