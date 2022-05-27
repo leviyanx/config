@@ -18,3 +18,8 @@
 7. [Lazygit](https://github.com/jesseduffield/lazygit)
    1. macOS: `~/Library/Application support/lazygit`
 8. [Neovim](https://neovim.io/): `~/.config/nvim`
+
+Extra
+
+1. [alacritty-theme-switch](https://github.com/tichopad/alacritty-theme-switch): conveniently switch alacritty themes
+    1. install: `npm install -g alacritty-theme-switch`
