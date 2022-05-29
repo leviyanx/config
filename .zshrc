@@ -46,8 +46,6 @@ export NVM_DIR="$HOME/.nvm"
 # ranger
 # only load custom configs
 export RANGER_LOAD_DEFAULT_RC=FALSE
-# fix ranger crashed in tmux
-export TERM=xterm-256color
 
 # guest machine settings
 if [[ ! -f "$HOME/.guest-machine-settings.sh" ]]; then
