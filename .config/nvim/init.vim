@@ -325,6 +325,7 @@ let g:rustfmt_autosave = 1 " automatically formatted for standard style
 " 6.2 OneDark
 " 6.3 everforest
 " 6.4 gruvbox-material
+Plug 'sainnhe/gruvbox-material'
 " 6.5 light quiet
 Plug 'aonemd/quietlight.vim'
 
