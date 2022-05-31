@@ -25,11 +25,13 @@ if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
     alias vconf="nvim ~/.config/nvim/init.vim"
     alias nv="nvim"
+    alias v="nvim"
 else
     echo "Please install nvim, visit this page (https://github.com/neovim/neovim/wiki/Installing-Neovim )"
     export EDITOR=vim
     alias vconf="vim ~/.vimrc"
     alias nv="vim"
+    alias v="vim"
 fi
 # python version
 export PATH="/usr/local/opt/python@3.10/bin:$PATH" 
@@ -282,7 +284,6 @@ function zvm_after_init() {
 alias gs="git status"
 alias gf="git diff"
 alias c="clear"
-alias v="vim"
 alias la="ls -aG"
 alias ll="ls -alhG"
 alias f="fzf"
