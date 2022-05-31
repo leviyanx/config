@@ -24,10 +24,12 @@ export PATH="$PATH:$HOME/.local/bin"
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
     alias vconf="nvim ~/.config/nvim/init.vim"
+    alias nv="nvim"
 else
     echo "Please install nvim, visit this page (https://github.com/neovim/neovim/wiki/Installing-Neovim )"
     export EDITOR=vim
     alias vconf="vim ~/.vimrc"
+    alias nv="vim"
 fi
 # python version
 export PATH="/usr/local/opt/python@3.10/bin:$PATH" 
