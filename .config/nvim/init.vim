@@ -389,7 +389,7 @@ function! SetBackground()
     if 6 <= hour && hour < 18
         set background=light
         set t_Co=256
-        colorscheme one
+        colorscheme iceberg
     else
         set background=dark
         colorscheme gruvbox-material
