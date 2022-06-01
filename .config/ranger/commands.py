@@ -1,5 +1,6 @@
 from ranger.api.commands import Command
 
+
 class fzf_select(Command):
     """
     :fzf_select
@@ -32,7 +33,8 @@ class fzf_select(Command):
                 fd, hidden, exclude, only_directories
             )
         else:
-            hidden = ('-false' if self.fm.settings.show_hidden else r"-path '*/\.*' -prune")
+            hidden = (
+                '-false' if self.fm.settings.show_hidden else r"-path '*/\.*' -prune")
             exclude = r"\( -name '\.git' -o -iname '\.*py[co]' -o -fstype 'dev' -o -fstype 'proc' \) -prune"
             only_directories = ('-type d' if self.quantifier else '')
             fzf_default_command = 'find -L . -mindepth 1 {} -o {} -o {} -print | cut -b3-'.format(
@@ -60,16 +62,19 @@ class fzf_select(Command):
             else:
                 self.fm.select_file(selected)
 
+
 class toggleVCS(Command):
     def execute(self):
         self.fm.execute_console("set vcs_aware!")
         self.fm.execute_console("reload_cwd")
+
 
 class mkcd(Command):
     """
     :mkcd <dirname>
     Creates a directory with the name <dirname> and enters it.
     """
+
     def execute(self):
         from os.path import join, expanduser, lexists
         from os import makedirs
@@ -90,22 +95,24 @@ class mkcd(Command):
                                  and not self.fm.settings['show_hidden']):
                     self.fm.cd(s)
                 else:
-                    ## We force ranger to load content before calling `scout`.
+                    # We force ranger to load content before calling `scout`.
                     self.fm.thisdir.load_content(schedule=False)
                     self.fm.execute_console('scout -ae ^{}$'.format(s))
         else:
             self.fm.notify("file/directory exists!", bad=True)
 
-class code_dir(Command):
-  """
-  :code_dir
-  Opens current directory in VSCode
-  """
 
-  def execute(self):
-    dirname = self.fm.thisdir.path
-    codecmd = ["code", dirname]
-    self.fm.execute_command(codecmd)
+class code_dir(Command):
+    """
+    :code_dir
+    Opens current directory in VSCode
+    """
+
+    def execute(self):
+        dirname = self.fm.thisdir.path
+        codecmd = ["code", dirname]
+        self.fm.execute_command(codecmd)
+
 
 class code_file(Command):
     """
@@ -117,6 +124,7 @@ class code_file(Command):
         filepath = self.fm.thisfile.path
         codecmd = ["code", filepath]
         self.fm.execute_command(codecmd)
+
 
 class open_dir_with_system_file_manager(Command):
     """
@@ -130,3 +138,23 @@ class open_dir_with_system_file_manager(Command):
         if os.uname().sysname == 'Darwin':
             # macOS: open with finder
             self.fm.execute_command("open .")
+
+
+class open_with_vim_or_nvim(Command):
+    """
+    :open_with_vim_or_nvim
+    Open current file with vim or neovim
+    """
+
+    def execute(self):
+        from ranger.ext.get_executables import get_executables
+
+        filepath = self.fm.thisfile.path
+        if 'nvim' in get_executables():
+            codecmd = ["nvim", filepath]
+            self.fm.execute_command(codecmd)
+        elif 'vim' in get_executables():
+            codecmd = ["vim", filepath]
+            self.fm.execute_command(codecmd)
+        else:
+            self.fm.notify("There is no neovim or vim!", bad=True)
