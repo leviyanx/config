@@ -328,6 +328,10 @@ let g:rustfmt_autosave = 1 " automatically formatted for standard style
 Plug 'sainnhe/gruvbox-material'
 " 6.5 light quiet
 Plug 'aonemd/quietlight.vim'
+" 6.6 iceberg
+Plug 'cocopon/iceberg.vim'
+" 6.7 vim one
+Plug 'rakr/vim-one'
 
 " 7 Commentary
 Plug 'tpope/vim-commentary', { 'on': 'Commentary' }
@@ -385,7 +389,7 @@ function! SetBackground()
     if 6 <= hour && hour < 18
         set background=light
         set t_Co=256
-        colorscheme quietlight
+        colorscheme one
     else
         set background=dark
         colorscheme gruvbox-material
