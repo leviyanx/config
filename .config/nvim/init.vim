@@ -312,6 +312,8 @@ nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
 nmap <leader>4 <Plug>AirlineSelectTab4
 nmap <leader>5 <Plug>AirlineSelectTab5
+" 4.3 airline theme
+Plug 'vim-airline/vim-airline-themes'
 
 " 5 Rust-specific plugin
 " 5.1 Rust.vim
@@ -330,8 +332,6 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'aonemd/quietlight.vim'
 " 6.6 iceberg
 Plug 'cocopon/iceberg.vim'
-" 6.7 vim one
-Plug 'rakr/vim-one'
 
 " 7 Commentary
 Plug 'tpope/vim-commentary', { 'on': 'Commentary' }
@@ -389,7 +389,8 @@ function! SetBackground()
     if 6 <= hour && hour < 18
         set background=light
         set t_Co=256
-        colorscheme iceberg
+        colorscheme quietlight
+        let g:airline_theme='papercolor'
     else
         set background=dark
         colorscheme gruvbox-material
