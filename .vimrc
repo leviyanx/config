@@ -313,6 +313,8 @@ nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
 nmap <leader>4 <Plug>AirlineSelectTab4
 nmap <leader>5 <Plug>AirlineSelectTab5
+" 4.3 airline theme
+Plug 'vim-airline/vim-airline-themes'
 
 " 5 Rust-specific plugin
 " 5.1 Rust.vim
@@ -326,6 +328,8 @@ let g:rustfmt_autosave = 1 " automatically formatted for standard style
 " 6.2 OneDark
 " 6.3 everforest
 " 6.4 gruvbox-material
+" 6.5 light quiet
+Plug 'aonemd/quietlight.vim'
 
 " 7 Commentary
 Plug 'tpope/vim-commentary', { 'on': 'Commentary' }
@@ -348,6 +352,17 @@ Plug 'MortenStabenau/matlab-vim', { 'for': 'matlab'}
 call plug#end()
 " End - Setting up Plug-Vim
 
-" theme
-set background=dark " for everforest or gruvbox-material theme
-colorscheme gruvbox-material
+" automatic switch between light and dark theme
+function! SetBackground()
+    let hour = strftime("%H")
+    if 6 <= hour && hour < 18
+        set background=light
+        set t_Co=256
+        colorscheme quietlight
+        let g:airline_theme='papercolor'
+    else
+        set background=dark
+        colorscheme gruvbox-material
+    endif
+endfunction
+call SetBackground()
