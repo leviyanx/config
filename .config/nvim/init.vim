@@ -195,7 +195,6 @@ let g:coc_global_extensions = [
             \ 'coc-pyright',
             \ 'coc-java',
             \ 'coc-rls',
-            \ 'coc-rust-analyzer',
             \ 'coc-json',
             \ 'coc-vimlsp']
 " Don't pass messages to |ins-completion-menu|.
