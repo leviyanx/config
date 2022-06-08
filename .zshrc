@@ -23,13 +23,13 @@ export PATH="$PATH:$HOME/.local/bin"
 # set default editor
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
-    alias vconf="nvim ~/.config/nvim/init.vim"
+    alias vc="nvim ~/.config/nvim/init.vim"
     alias nv="nvim"
     alias v="nvim"
 else
     echo "Please install nvim, visit this page (https://github.com/neovim/neovim/wiki/Installing-Neovim )"
     export EDITOR=vim
-    alias vconf="vim ~/.vimrc"
+    alias vc="vim ~/.vimrc"
     alias nv="vim"
     alias v="vim"
 fi
@@ -287,9 +287,9 @@ alias la="ls -aG"
 alias ll="ls -alhG"
 alias f="fzf"
 alias tl="tldr"
-alias zconf="$EDITOR ~/.zshrc"
+alias zc="$EDITOR ~/.zshrc"
 alias zload="exec zsh"
-alias tconf="$EDITOR $HOME/.tmux.conf"
+alias tc="$EDITOR $HOME/.tmux.conf"
 alias tload="tmux source-file $HOME/.tmux.conf"
 alias r="ranger"
 alias lg="lazygit"
