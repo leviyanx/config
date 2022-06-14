@@ -146,6 +146,9 @@ set scrolloff=5 " lines to cursor
 " open a vertical terminal in vim
 nnoremap <leader>xz :vs +te<CR>
 
+" search visually selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 " Basic mappings
 noremap ; :
 nnoremap Q :q<CR>
