@@ -47,24 +47,6 @@
 .config/alacritty/themes/.selected_theme
 # nvim
 !.config/nvim/
-.config/nvim/*
-# coc settings
-!.config/nvim/coc-settings.json
-# nvim settings
-!.config/nvim/init.vim
-# nvim theme
-!.config/nvim/colors
-!.config/nvim/after
-!.config/nvim/autoload
-.config/nvim/autoload/*
-!.config/nvim/autoload/airline
-!.config/nvim/autoload/lightline
-!.config/nvim/autoload/dracula.vim
-!.config/nvim/autoload/onedark.vim
-!.config/nvim/autoload/everforest.vim
-!.config/nvim/autoload/gruvbox_material.vim
-# nvim plug-vim
-!.config/nvim/autoload/plug.vim
 # ranger
 !.config/ranger/
 .config/ranger/__pycache__
