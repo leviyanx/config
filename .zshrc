@@ -299,6 +299,7 @@ alias lg="lazygit"
 alias mv="mv -i"           # -i prompts before overwrite
 alias mkdir="mkdir -p"     # -p make parent dirs as needed
 alias df="df -h"           # -h prints human readable format
+alias cd..="cd .."
 ## 2.1.1 MacOS
 if [[ `uname` == "Darwin" ]]; then
     alias brse="brew search"
