@@ -405,3 +405,7 @@ function ranger {
     fi
     command rm -f -- "$tempfile" 2>/dev/null
 }
+
+# add support for wasmtime
+export WASMTIME_HOME="$HOME/.wasmtime"
+export PATH="$WASMTIME_HOME/bin:$PATH"
