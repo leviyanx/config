@@ -19,6 +19,7 @@
 7. [Lazygit](https://github.com/jesseduffield/lazygit)
    1. macOS: `~/Library/Application support/lazygit`
 8. [Neovim](https://neovim.io/): ~~`~/.config/nvim`~~, submodule [nvim](https://github.com/leviyanx/nvim.git)
+9. [Clashx](https://github.com/yichengchen/clashX), submodule [clash](https://github.com/leviyanx/clash.git)
 
 Extra
 
