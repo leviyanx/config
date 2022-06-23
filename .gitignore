@@ -61,5 +61,3 @@ Library/Application Support/lazygit/*
 Library/Application Support/lazygit/config.yml
 # clashx
 !.config/clash
-.config/clash/*
-!.config/clash/config.yaml
