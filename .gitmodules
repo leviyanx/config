@@ -1,3 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:leviyanx/nvim.git
+[submodule ".config/clash"]
+	path = .config/clash
+	url = git@github.com:leviyanx/clash.git
