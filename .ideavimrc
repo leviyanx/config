@@ -30,7 +30,6 @@ set clipboard=unnamedplus  "X clipboard as unnamed
 
 "press kj to exit insert mode
 imap kj <Esc>
-vmap kj <Esc>
 
 "@see https://youtrack.jetbrains.com/issue/VIM-510 on expand selected region. Press `Ctrl-W` and `Ctrl-Shift-W` to increase and decrease selected region
 
