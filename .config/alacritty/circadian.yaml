@@ -1,0 +1,34 @@
+#
+# Choose whatever folder you like to store the themes
+#
+# If you are a *NIX user:
+theme-folder: ~/.config/alacritty/themes
+#
+# If you are a WINDOWS user:
+# Remember to escape special chars for Windows paths and surround them
+# with double quotes if you are using environment variables, e.g.:
+# theme-folder: "%APPDATA%\\alacritty\\themes"
+
+#
+# If you want to use sun phases instead of time, put your coordinates in the
+# config file:
+# coordinates:
+#   latitude: 40.684485
+#   longitude: -74.401383
+
+# Themes are an associative array of the following format.
+# Theme names MUST NOT use file extensions.
+#
+# 'time' values can either be:
+#   - an HH:MM time format
+#   - one of the following sun phases:
+#       * dawn
+#       * sunrise
+#       * noon
+#       * sunset
+#       * dusk
+themes:
+  - time: 18:00
+    name: gruvbox-material
+  - time: 6:00
+    name: pencil-light
