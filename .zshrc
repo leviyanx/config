@@ -24,6 +24,7 @@ export PATH="$PATH:$HOME/.local/bin"
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
     alias vc="nvim ~/.config/nvim/init.vim"
+    alias nc="nvim ~/.config/nvim/init.vim"
     alias nv="nvim"
     alias v="nvim"
 else
