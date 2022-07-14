@@ -1,12 +1,13 @@
 font:
   normal:
-    Default: null
+    Default:
     family: SauceCodePro Nerd Font
   size: 13
 colors:
   primary:
     background: '0x282828'
     foreground: '0xdfbf8e'
+
   normal:
     black: '0x665c54'
     red: '0xea6962'
@@ -16,6 +17,7 @@ colors:
     magenta: '0xd3869b'
     cyan: '0x89b482'
     white: '0xdfbf8e'
+
   bright:
     black: '0x928374'
     red: '0xea6962'
@@ -26,21 +28,25 @@ colors:
     cyan: '0x89b482'
     white: '0xdfbf8e'
 key_bindings:
-  - key: V
-    mods: Control|Shift
-    action: Paste
-  - key: C
-    mods: Control|Shift
-    action: Copy
-  - key: H
-    mods: Alt
-    chars: "\x1bh"
-  - key: J
-    mods: Alt
-    chars: "\x1bj"
-  - key: K
-    mods: Alt
-    chars: "\x1bk"
-  - key: L
-    mods: Alt
-    chars: "\x1bl"
+- key: V
+  mods: Control|Shift
+  action: Paste
+- key: C
+  mods: Control|Shift
+  action: Copy
+- key: H
+  mods: Alt
+  chars: "\eh"
+- key: J
+  mods: Alt
+  chars: "\ej"
+- key: K
+  mods: Alt
+  chars: "\ek"
+- key: L
+  mods: Alt
+  chars: "\el"
+cursor:
+  style:
+    blinking: Always
+  blink_interval: 550
