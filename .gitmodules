@@ -4,3 +4,6 @@
 [submodule ".config/clash"]
 	path = .config/clash
 	url = git@github.com:leviyanx/clash.git
+[submodule ".config/alacritty"]
+	path = .config/alacritty
+	url = git@github.com:leviyanx/alacritty.git
