@@ -7,6 +7,7 @@
 3. 连接本仓库：`git remote add origin git@github.com:leviyanx/config.git`。
 4. 拉取配置：`git pull origin main`。
 5. 拉取子项目：`git submodule update --init --recursive`
+6. 下载zsh等程序
 
 包括哪些配置：
 
