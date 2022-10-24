@@ -10,10 +10,6 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-# proxy setting
-export http_proxy="127.0.0.1:12346"
-export https_proxy="127.0.0.1:12346"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -62,16 +58,16 @@ if [[ ! -f "$HOME/.guest-machine-settings.sh" ]]; then
         vared -p "Is this a guest machine (not your host machine), y/n: " -c ans
         if [[ "y" == $ans ]]; then
             # this is a guest machine
-            # write settings into the setting file
-            echo "unset http_proxy" > "$HOME/.guest-machine-settings.sh"
-            echo "unset https_proxy" >> "$HOME/.guest-machine-settings.sh"
+            echo "" > "$HOME/.guest-machine-settings.sh"
             echo "\nGuest machine settings are finished."
             # remind to install some necessary programs
             echo "Then please install: python 3.10, node 18.0.0\n"
             break
         elif [[ "n" == $ans ]]; then
             # this is a host machine
-            echo "" > "$HOME/.guest-machine-settings.sh"
+            # write settings into the setting file
+            echo "export http_proxy='127.0.0.1:7890'" > "$HOME/.guest-machine-settings.sh"
+            echo "export https_proxy='127.0.0.1:7890' " >> "$HOME/.guest-machine-settings.sh"
             echo "\nGuest machine settings are finished."
             break
         else
