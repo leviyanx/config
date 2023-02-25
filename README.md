@@ -1,20 +1,20 @@
-这是同步我配置文件的仓库。
+My dotfiles in Linux/MacOS.
 
-如何使用本仓库的配置：
+How to use?
 
-1. 在家目录 `$HOME`下执行 `git init`。
-2. 更改branch的名字：`git branch -m main`。
-3. 连接本仓库：`git remote add origin git@github.com:leviyanx/config.git`。
-4. 拉取配置：`git pull origin main`。
-5. 拉取子项目：`git submodule update --init --recursive`
-6. 下载zsh等程序
+1. Execute `git init` in `$HOME`.
+2. Rename branch：`git branch -m main`.
+3. Connect this repo：`git remote add origin git@github.com:leviyanx/config.git`.
+4. Pull repo：`git pull origin main`.
+5. Pull submodule：`git submodule update --init --recursive`.
+6. Install programs (look up below), such as ZSH.
 
-包括哪些配置：
+**Programs/Config included:** (This repo contains a script that will try to install most of these programs **automatically**. However, some programs may require manual installation. You will see their messages on the prompt. You need to follow these messages to install them manually.)
 
 1. [Zsh](https://www.zsh.org/): `.zshrc`
 2. [Powerlevel10k](https://github.com/romkatv/powerlevel10k): `.zshrc` and `.p10k.zsh`
 3. [Alacritty](https://github.com/alacritty/alacritty): `~/.config/alacritty`
-4. (Deprecated) [Vim](https://www.vim.org/): `.vimrc` and `.vim`(colors, autoload, after)
+4. (**Deprecated**) [Vim](https://www.vim.org/): `.vimrc` and `.vim`(colors, autoload, after)
 5. Settings for [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim): `.ideavimrc`
 6. [Ranger](https://github.com/ranger/ranger): `~/.config/ranger`
 7. [Lazygit](https://github.com/jesseduffield/lazygit)
