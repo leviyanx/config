@@ -3,11 +3,13 @@ My dotfiles in Linux/MacOS.
 How to use?
 
 1. Execute `git init` in `$HOME`.
-2. Rename branch：`git branch -m main`.
-3. Connect this repo：`git remote add origin git@github.com:leviyanx/config.git`.
+2. Connect this repo：`git remote add origin git@github.com:leviyanx/config.git`.
+3. Make sure that SSH can connect Github.
+   - If this is a new system, [set SSH to connect with github](./set_ssh.md).
 4. Pull repo：`git pull origin main`.
 5. Pull submodule：`git submodule update --init --recursive`.
-6. Install programs (look up below), such as ZSH.
+6. Install `ZSH` and run `zsh`.
+7. Waiting...
 
 **Programs/Config included:** (This repo contains a script that will try to install most of these programs **automatically**. However, some programs may require manual installation. You will see their messages on the prompt. You need to follow these messages to install them manually.)
 
