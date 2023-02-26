@@ -1,10 +1,7 @@
 Generate ssh key and add it to Github.
 
-```bash
-ssh-keygen -t rsa -b 4096 -C "<your_email_in_github@mail.com>"
-```
-
-The key will be stored in `~/.ssh`.
+1. Run `ssh-keygen -t rsa -b 4096 -C "<your_email_in_github@mail.com>"`. The key will be stored in `~/.ssh`.
+2. Find public key and add it to Github.
 
 #### Problem: `ssh: connect to host github.com port 22: Connection timed out`
 
