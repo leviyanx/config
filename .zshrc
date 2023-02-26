@@ -10,13 +10,14 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Set Path so that '/usr/local/bin' appears before '/usr/bin'
-export PATH="/usr/local/bin:$PATH" 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# arkade
 export PATH=$PATH:$HOME/.arkade/bin/
+# Go language
+export GOROOT=/usr/local/src/go
+export PATH=$PATH:$GOROOT/bin
+
 # set default editor
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
