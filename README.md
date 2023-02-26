@@ -19,10 +19,14 @@ How to use?
 4. (**Deprecated**) [Vim](https://www.vim.org/): `.vimrc` and `.vim`(colors, autoload, after)
 5. Settings for [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim): `.ideavimrc`
 6. [Ranger](https://github.com/ranger/ranger): `~/.config/ranger`
-7. [Lazygit](https://github.com/jesseduffield/lazygit)
+7. [Autojump](https://github.com/wting/autojump): After installing, **run** 
+```bash
+source /usr/share/autojump/autojump.zsh
+```
+8. [Lazygit](https://github.com/jesseduffield/lazygit)
    1. macOS: `~/Library/Application support/lazygit`
-8. [Neovim](https://neovim.io/): ~~`~/.config/nvim`~~, submodule [nvim](https://github.com/leviyanx/nvim.git)
-9. [Clashx](https://github.com/yichengchen/clashX), submodule [clash](https://github.com/leviyanx/clash.git)
+9. [Neovim](https://neovim.io/): ~~`~/.config/nvim`~~, submodule [nvim](https://github.com/leviyanx/nvim.git)
+10. [Clashx](https://github.com/yichengchen/clashX), submodule [clash](https://github.com/leviyanx/clash.git)
 
 Extra
 
