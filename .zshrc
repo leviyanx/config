@@ -39,13 +39,13 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 export ZSH_PLUGINS="$HOME/.oh-my-zsh/custom/plugins"
 export ZSH_THEMES="$HOME/.oh-my-zsh/custom/themes"
-# Add default node to path (to skip NVM checking time )
-export PATH=~/.nvm/versions/node/v18.0.0/bin:$PATH
 # Node version manager for OSX or Linux
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Use node of version 14.14.0
+nvm use v14.14.0
 # ranger
 # only load custom configs
 export RANGER_LOAD_DEFAULT_RC=FALSE
@@ -129,7 +129,6 @@ if [[ ! -d "$HOME/powerlevel10k" ]]; then
 fi
 
 # 0.4 Shell tools
-install_npm_suggestion="If haven't installed npm, you can use nvm to install it, visit this page to learn how install nvm \n(https://github.com/nvm-sh/nvm#installing-and-updating ), then run 'nvm install node' to install npm\nAfter that, if this is a host machine, execute: npm config set proxy http://127.0.0.1:12346"
 # 0.4.1 fzf (support vim plugin)
 if [[ ! -f "$HOME/.fzf/README.md" ]]; then
     echo "Installing fzf .."
@@ -143,8 +142,7 @@ if [[ ! -x "$(command -v bat)" ]]; then
 fi
 # 0.4.3 tldr
 if [[ ! -x "$(command -v tldr)" ]]; then
-    echo "Please install tldr, run command: 'sudo npm install -g tldr'"
-    echo -e $install_npm_suggestion
+    echo "Please install tldr, run command: 'npm install -g tldr'" 
 fi
 # 0.4.4 ripgrep (support vim plugin)
 if [[ ! -x "$(command -v rg)" ]]; then
