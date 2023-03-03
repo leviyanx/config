@@ -22,14 +22,11 @@ export PATH=$PATH:$GOROOT/bin
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
     alias vc="nvim ~/.config/nvim/init.vim"
-    alias nc="nvim ~/.config/nvim/init.vim"
-    alias nv="nvim"
     alias v="nvim"
 else
     echo "Please install nvim, visit this page (https://github.com/neovim/neovim/wiki/Installing-Neovim )"
     export EDITOR=vim
     alias vc="vim ~/.vimrc"
-    alias nv="vim"
     alias v="vim"
 fi
 # python version
