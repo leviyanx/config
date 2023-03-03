@@ -209,8 +209,8 @@ Plug 'vim-airline/vim-airline-themes'
 "   These comment as a list to record themes I like.
 " 2.1 gruvbox-material
 Plug 'sainnhe/gruvbox-material'
-" 2.2 light quiet
-Plug 'aonemd/quietlight.vim'
+" 2.2 light quiet (edge)
+Plug 'sainnhe/edge'
 
 " All of your Plugins must be added above the following line
 call plug#end()
@@ -221,8 +221,11 @@ function! SetBackground()
     let hour = strftime("%H")
     if 6 <= hour && hour < 18
         set background=light
-        set t_Co=256
-        colorscheme quietlight
+        if has('termguicolors')
+          set termguicolors
+        endif
+
+        colorscheme edge
     else
         set background=dark
         colorscheme gruvbox-material
