@@ -184,119 +184,10 @@ call plug#begin('~/.vim/plugged')
 " Keep Plugin commands between plug#begin/end
 " ----------- Add Plugin Declaration Here ----------
 
-" 1 coc
-" Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" coc settings
-let g:coc_global_extensions = [
-            \ 'coc-marketplace',
-            \ 'coc-diagnostic',
-            \ 'coc-explorer',
-            \ 'coc-git',
-            \ 'coc-gitignore',
-            \ 'coc-python',
-            \ 'coc-pyright',
-            \ 'coc-java',
-            \ 'coc-rls',
-            \ 'coc-json',
-            \ 'coc-vimlsp']
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=number
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-" Use <c-o> to trigger completion.
-inoremap <silent><expr> <c-o> coc#refresh()
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-" Run the Code Lens action on te current line.
-nmap <leader>cl  <Plug>(coc-codelens-action)
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-" coc-explorer
-nmap <leader>xf :CocCommand explorer<CR>
-
-" 2 fzf(Fuzzy file finder)
-" 2.1 Install fzf (zsh will install it automatically)
-" 2.2 following setting
-Plug '~/.fzf'           " enable fzf which installed by git
-Plug 'junegunn/fzf.vim' " add fzf.vim
-" This is the default extra key bindings
-let g:fzf_action = {
-    \ 'ctrl-t': 'tab split',
-    \ 'ctrl-x': 'split',
-    \ 'ctrl-v': 'vsplit',}
-" Default fzf layout
-" - down / up / left / right
-let g:fzf_layout = {'down': '~40%'}
-" quickly open files with fzf (whether in NERDTree or not)
-nnoremap <silent> <expr> <Leader>kk (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
-" open recent files with fzf
-nnoremap <silent> <leader>rr :History<CR>
-" using Rg with fzf
-nnoremap <silent> <leader>xm :Rg<CR>
-
-" 3 lacked
-
-" 4 Airline
+" 1 Airline
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enable = 1
-" 4.1 set airline 
+" 1.1 set airline 
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#formatter = 'default'
@@ -304,46 +195,22 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnametruncate = 20
 let g:airline#extensions#tabline#fnamecollapse = 2
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-" 4.2 set key bindings 
+" 1.2 set key bindings 
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
 nmap <leader>4 <Plug>AirlineSelectTab4
 nmap <leader>5 <Plug>AirlineSelectTab5
-" 4.3 airline theme
+" 1.3 airline theme
 Plug 'vim-airline/vim-airline-themes'
 
-" 5 Rust-specific plugin
-" 5.1 Rust.vim
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-let g:rustfmt_autosave = 1 " automatically formatted for standard style
-
-" 6 Theme plugin 
+" 2 Theme plugin 
 "   Not use vundle to install theme, but manually install it
 "   These comment as a list to record themes I like.
-" 6.1 Dracula-theme
-" 6.2 OneDark
-" 6.3 everforest
-" 6.4 gruvbox-material
-" 6.5 light quiet
+" 2.1 gruvbox-material
+Plug 'sainnhe/gruvbox-material'
+" 2.2 light quiet
 Plug 'aonemd/quietlight.vim'
-
-" 7 Commentary
-Plug 'tpope/vim-commentary', { 'on': 'Commentary' }
-" comment out current line
-nnoremap <leader>ci :Commentary<CR>
-" comment out visually selected lines
-vnoremap <leader>ci :Commentary<CR>
-
-" 8 expand region
-Plug 'terryma/vim-expand-region'
-" smart select
-map <leader>xx <Plug>(expand_region_expand)
-map <leader>zz <Plug>(expand_region_shrink)
-
-" 9 matlab support 
-" this plugin must use with tmux
-Plug 'MortenStabenau/matlab-vim', { 'for': 'matlab'}
 
 " All of your Plugins must be added above the following line
 call plug#end()
@@ -356,7 +223,6 @@ function! SetBackground()
         set background=light
         set t_Co=256
         colorscheme quietlight
-        let g:airline_theme='papercolor'
     else
         set background=dark
         colorscheme gruvbox-material
