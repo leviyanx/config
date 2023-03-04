@@ -306,24 +306,6 @@ fi
 # 2.2 Global Aliases
 
 # 2.3 Param Aliases
-# Git add, an example:
-#   $ gd README.md
-unalias ga # remove given alias from oh-my-zsh
-ga() { git add "$1"; }
-# Git commit
-# if commit message is null, run "git commit"
-# else run "git commit commit_message"
-#
-# an example:
-#   $ gc "init commit"
-unalias gc # remove given alias from oh-my-zsh
-gc() {
-    if [[ -z "$1" ]]; then
-        git commit
-    else
-        git commit -m "$1"
-    fi
-}
 # Create a folder and go into it
 #   $ mcd test
 mcd() {
@@ -334,10 +316,6 @@ mcd() {
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
-# cd "My Drive"
-cg() {
-    cd "$HOME/My Drive"
 }
 # Save current working directory
 marco() {
