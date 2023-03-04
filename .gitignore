@@ -6,6 +6,9 @@
 !README.md
 # Zsh
 !.zshrc
+# bash
+!.bashrc
+!.bash_aliases
 # P10K
 !.p10k.zsh
 # Vim
