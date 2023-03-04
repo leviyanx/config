@@ -50,7 +50,7 @@ nvm use v14.14.0
 # only load custom configs
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
-# temporarily fix ranger crashing in tmux
+# Enable 256-color
 export TERM=xterm-256color
 
 # guest machine settings
