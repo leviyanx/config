@@ -29,6 +29,7 @@ else
     alias vc="vim ~/.vimrc"
     alias v="vim"
 fi
+
 # python version
 export PATH="/usr/local/opt/python@3.10/bin:$PATH" 
 # Path to your oh-my-zsh installation.
@@ -36,6 +37,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 export ZSH_PLUGINS="$HOME/.oh-my-zsh/custom/plugins"
 export ZSH_THEMES="$HOME/.oh-my-zsh/custom/themes"
+
 # Node version manager for OSX or Linux
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
@@ -43,9 +45,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # Use node of version 14.14.0
 nvm use v14.14.0
+
 # ranger
 # only load custom configs
 export RANGER_LOAD_DEFAULT_RC=FALSE
+
 # temporarily fix ranger crashing in tmux
 export TERM=xterm-256color
 
