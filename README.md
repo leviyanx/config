@@ -31,6 +31,10 @@ Need to install manually:
     - [submodule - nvim](https://github.com/leviyanx/nvim.git)
 3. Nodejs 
     - v14.14.0 (fit the requirement of coc)
+        1. Download the corrosponding compressed package from this URL https://nodejs.org/dist/v14.14.0/ .
+        2. Extract files from it (e.g. node-v14.14.0-linux-x64).
+        3. Move this dir into `/usr/local/`.
+        4. Create soft link of node and npm in it to `/usr/local/bin` (e.g. `sudo ln -s /usr/local/node-v14.14.0-linux-x64/bin/node /usr/local/bin` and `sudo ln -s /usr/local/node-v14.14.0-linux-x64/bin/npm /usr/local/bin`).
     - **DO NOT USE NVM** that slows down zsh.
 4. [Ranger](https://github.com/ranger/ranger)
     - `~/.config/ranger`
