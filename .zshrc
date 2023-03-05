@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# DON'T USE NVM that slows down zsh
+# --------------------------------
+
 # Get profiling information(more detailed load time) by running: 'zprof'
 zmodload zsh/zprof
 
@@ -37,14 +40,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 export ZSH_PLUGINS="$HOME/.oh-my-zsh/custom/plugins"
 export ZSH_THEMES="$HOME/.oh-my-zsh/custom/themes"
-
-# Node version manager for OSX or Linux
-# This loads nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# Use node of version 14.14.0
-nvm use v14.14.0
 
 # ranger
 # only load custom configs

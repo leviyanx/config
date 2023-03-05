@@ -13,20 +13,36 @@ How to use?
 
 **Programs/Config included:** (This repo contains a script that will try to install most of these programs **automatically**. However, some programs may require manual installation. You will see their messages on the prompt. You need to follow these messages to install them manually.)
 
-1. [Zsh](https://www.zsh.org/): `.zshrc`
-2. [Powerlevel10k](https://github.com/romkatv/powerlevel10k): `.zshrc` and `.p10k.zsh`
-3. [Alacritty](https://github.com/alacritty/alacritty): `~/.config/alacritty`
-4. (**Deprecated**) [Vim](https://www.vim.org/): `.vimrc` and `.vim`(colors, autoload, after)
-5. Settings for [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim): `.ideavimrc`
-6. [Ranger](https://github.com/ranger/ranger): `~/.config/ranger`
-7. [Autojump](https://github.com/wting/autojump): After installing, **run** 
+Installed automatically:
+
+1. [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    - `.zshrc` and `.p10k.zsh`
+2. [Vim](https://www.vim.org/)
+    -  `.vimrc` and `.vim`
+3. Settings for [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim)
+    - `.ideavimrc`
+4. fzf 
+
+Need to install manually:
+
+1. [Zsh](https://www.zsh.org/) (mentioned above)
+    - `.zshrc`
+2. [Neovim](https://neovim.io/)
+    - [submodule - nvim](https://github.com/leviyanx/nvim.git)
+3. Nodejs 
+    - v14.14.0 (fit the requirement of coc)
+    - **DO NOT USE NVM** that slows down zsh.
+4. [Ranger](https://github.com/ranger/ranger)
+    - `~/.config/ranger`
+5. [Autojump](https://github.com/wting/autojump)
+    - After installation, **run** 
 ```bash
 source /usr/share/autojump/autojump.zsh
 ```
-8. [Lazygit](https://github.com/jesseduffield/lazygit)
-   1. macOS: `~/Library/Application support/lazygit`
-9. [Neovim](https://neovim.io/): ~~`~/.config/nvim`~~, submodule [nvim](https://github.com/leviyanx/nvim.git)
-10. [Clashx](https://github.com/yichengchen/clashX), submodule [clash](https://github.com/leviyanx/clash.git)
+6. [Lazygit](https://github.com/jesseduffield/lazygit)
+   - macOS: `~/Library/Application support/lazygit`
+7. [Alacritty](https://github.com/alacritty/alacritty)
+    - `~/.config/alacritty`
 
 Extra
 
