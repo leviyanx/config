@@ -15,11 +15,11 @@ compinit -C
 
 # Set Path so that '/usr/local/bin' appears before '/usr/bin'
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-# arkade
-export PATH=$PATH:$HOME/.arkade/bin/
 # Go language
 export GOROOT=/usr/local/src/go
 export PATH=$PATH:$GOROOT/bin
+# Add Nodejs to PATH
+export PATH=$PATH:/usr/local/src/nodejs/bin
 
 # set default editor
 if [[ -x "$(command -v nvim)" ]]; then
