@@ -113,5 +113,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export NEMU_HOME=/home/leviyan/Programs/ics2022/nemu
-export AM_HOME=/home/leviyan/Programs/ics2022/abstract-machine
+export NEMU_HOME=/home/leviyan/Documents/Programs/ics2022/nemu
+export AM_HOME=/home/leviyan/Documents/Programs/ics2022/abstract-machine
