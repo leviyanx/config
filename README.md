@@ -54,6 +54,13 @@ Executable files in `/usr/bin` cannot be changed on MacOS, so I set zsh/bash sou
 
 So, after steps above, you can put or link your executable files into `/usr/local/bin` instead of `/usr/bin`. And you'll be able to enjoy the freedom of changing the environment variables that your work depends on (e.g. python3, nodejs).
 
+---
+
+Environment location
+
+- go: `/usr/local/src`
+- nodejs: `/usr/local/src`
+
 ### Extra
 
 1. [Alacritty](https://github.com/alacritty/alacritty)
