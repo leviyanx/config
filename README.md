@@ -22,29 +22,25 @@ Install [ZSH](https://www.zsh.org/), run `zsh` (its config file is `.zshrc`), an
 3. Settings for [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim): `.ideavimrc`
 4. fzf 
 
-After installation of programs mentioned above, there are some important programs to be installed manually:
+After installation of programs mentioned above, there are some important programs to be installed **manually**:
 
-1.[Neovim](https://neovim.io/)
-- [submodule - nvim](https://github.com/leviyanx/nvim.git)
-
-2.Nodejs 
-- v14.14.0 (fit the requirement of coc)
-   1. Download the corrosponding compressed package from this URL https://nodejs.org/dist/v14.14.0/ .
-   2. Extract files from it and rename the folder to `nodejs` (e.g. `node-v14.14.0-linux-x64` -> `nodejs`).
-   3. Move this dir into `/usr/local/src`.
-- **DO NOT USE NVM** that slows down zsh.
-
-3.[Ranger](https://github.com/ranger/ranger)
-- `~/.config/ranger`
-
-4.[Autojump](https://github.com/wting/autojump)
-- After installation, **run** 
+1. [Neovim](https://neovim.io/)
+   - [submodule - nvim](https://github.com/leviyanx/nvim.git)
+2. Nodejs 
+   - v14.14.0 (fit the requirement of coc)
+      1. Download the corrosponding compressed package from this URL https://nodejs.org/dist/v14.14.0/ .
+      2. Extract files from it and rename the folder to `nodejs` (e.g. `node-v14.14.0-linux-x64` -> `nodejs`).
+      3. Move this dir into `/usr/local/src`.
+   - **DO NOT USE NVM** that slows down zsh.
+3. [Ranger](https://github.com/ranger/ranger)
+   - `~/.config/ranger`
+4. [Autojump](https://github.com/wting/autojump)
+   - After installation, **run** 
 ```bash
 source /usr/share/autojump/autojump.zsh
 ```
-
-5.[Lazygit](https://github.com/jesseduffield/lazygit)
-- macOS: `~/Library/Application support/lazygit`
+5. [Lazygit](https://github.com/jesseduffield/lazygit)
+   - macOS: `~/Library/Application support/lazygit`
 
 #### Setup Environment 
 
