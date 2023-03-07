@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Set Path so that '/usr/local/bin' appears before '/usr/bin'
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
