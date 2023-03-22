@@ -27,8 +27,8 @@ After installation of programs mentioned above, there are some important program
 1. [Neovim](https://neovim.io/)
    - [submodule - nvim](https://github.com/leviyanx/nvim.git)
 2. Nodejs 
-   - v14.14.0 (fit the requirement of coc)
-      1. Download the corrosponding compressed package from this URL https://nodejs.org/dist/v14.14.0/ .
+   - General: v14.14.0 / Arm MacOS: v16.x (fit the requirement of coc)
+      1. Find and then download the corrosponding compressed package from this URL https://nodejs.org/dist/ .
       2. Extract files from it and rename the folder to `nodejs` (e.g. `node-v14.14.0-linux-x64` -> `nodejs`).
       3. Move this dir into `/usr/local/src`.
    - **DO NOT USE NVM** that slows down zsh.
