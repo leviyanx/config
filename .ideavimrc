@@ -45,6 +45,7 @@ noremap ,kk :action GotoFile<CR>
 noremap ,ii :action GotoSymbol<CR>
 noremap <C-]> :action GotoImplementation<CR>
 noremap ,xz :action ActivateTerminalToolWindow<CR>
+noremap ,xx :action EditorSelectWord<CR>
 
 " ideavim don't support numberic character in hotkey in 0.55
 " it's fixed in 0.55.1
@@ -57,4 +58,3 @@ noremap ,wh <C-W>h
 noremap ,wl <C-W>l
 noremap ,wj <C-W>j
 noremap ,wk <C-W>k
-noremap ,xx :action EditorSelectWord<CR>
