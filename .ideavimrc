@@ -46,6 +46,9 @@ noremap ,ii :action GotoSymbol<CR>
 noremap <C-]> :action GotoImplementation<CR>
 noremap ,xz :action ActivateTerminalToolWindow<CR>
 noremap ,xx :action EditorSelectWord<CR>
+" use jump history of jetbrain instead ideavim
+noremap <C-o> :action Back<CR>
+noremap <C-i> :action Forward<CR>
 
 " ideavim don't support numberic character in hotkey in 0.55
 " it's fixed in 0.55.1
