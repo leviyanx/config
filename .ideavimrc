@@ -28,6 +28,9 @@ set fillchars+=stl:\ ,stlnc:\
 set laststatus=2
 set clipboard=unnamedplus  "X clipboard as unnamed
 
+"press kj to exit insert mode
+imap kj <Esc>
+
 "@see https://youtrack.jetbrains.com/issue/VIM-510 on expand selected region. Press `Ctrl-W` and `Ctrl-Shift-W` to increase and decrease selected region
 
 noremap ,xm :action SearchEverywhere<CR>

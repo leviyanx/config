@@ -235,6 +235,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# zsh-vi-mode
+ZVM_VI_INSERT_ESCAPE_BINDKEY=kj # map kj to <Esc> in insert mode
+
 # The plugin will auto execute this zvm_after_init function
 function zvm_after_init() {
     # fzf
