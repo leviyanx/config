@@ -13,13 +13,13 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+# Add Nodejs to PATH
+export PATH=$PATH:/usr/local/src/nodejs/bin
 # Set Path so that '/usr/local/bin' appears before '/usr/bin'
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Go language
 export GOROOT=/usr/local/src/go
 export PATH=$PATH:$GOROOT/bin
-# Add Nodejs to PATH
-export PATH=$PATH:/usr/local/src/nodejs/bin
 
 # set default editor
 if [[ -x "$(command -v nvim)" ]]; then
@@ -380,3 +380,6 @@ function ranger {
 # add support for wasmtime
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
+
+
+. "/home/leviyan/.wasmedge/env"
