@@ -48,3 +48,5 @@ Library/Application Support/lazygit/*
 Library/Application Support/lazygit/config.yml
 # clashx
 !.config/clash
+# proxy settings
+!.guest-machine-setting.sh_win

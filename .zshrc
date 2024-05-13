@@ -73,7 +73,7 @@ if [[ ! -f "$HOME/.guest-machine-settings.sh" ]]; then
         fi
     done
 fi
-source ~/.guest-machine-settings.sh
+source ~/.guest-machine-settings.sh set
 
 # 0 Automatically install necessary programs
 # 0.1 oh-my-zsh
