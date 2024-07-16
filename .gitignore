@@ -4,8 +4,6 @@
 # Whitelist some files
 !.gitignore
 !README.md
-# Zsh
-!.zshrc
 # bash
 !.bashrc
 !.bash_aliases
@@ -30,6 +28,8 @@
 # dot config
 !.config/
 .config/*
+# zsh
+!.config/zsh/
 # Alacritty
 !.config/alacritty/
 # nvim

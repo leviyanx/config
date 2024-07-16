@@ -1,9 +1,5 @@
 #!/bin/sh
-# ----------------
-#
-# You need rename this file as .guest_machine_setting.sh
-#
-# ----------------
+
 hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
 wslip=$(hostname -I | awk '{print $1}')
 # 这里填写主机代理的端口
