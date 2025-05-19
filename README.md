@@ -1,5 +1,12 @@
 My dotfiles in Linux/MacOS.
 
+[New]
+
+tmux
+
+1. macos：在iterm2中才能正常使用
+   - 设置：iterm2 - settings - profiles - 选择一个profile - keys - Option键Esc+
+
 ### How to use?
 
 #### Pull Config
@@ -20,29 +27,31 @@ Install [ZSH](https://www.zsh.org/), run `zsh` (its config file is `.zshrc`), an
 1. [Powerlevel10k](https://github.com/romkatv/powerlevel10k): `.zshrc` and `.p10k.zsh`
 2. [Vim](https://www.vim.org/): `.vimrc` and `.vim`
 3. Settings for [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim): `.ideavimrc`
-4. fzf 
+4. fzf
 
 After installation of programs mentioned above, there are some important programs to be installed **manually**:
 
 1. [Neovim](https://neovim.io/)
    - [submodule - nvim](https://github.com/leviyanx/nvim.git)
-2. Nodejs 
+2. Nodejs
    - General: v14.14.0 / Arm MacOS: v16.x (fit the requirement of coc)
-      1. Find and then download the corrosponding compressed package from this URL https://nodejs.org/dist/ .
-      2. Extract files from it and rename the folder to `nodejs` (e.g. `node-v14.14.0-linux-x64` -> `nodejs`).
-      3. Move this dir into `/usr/local/src`.
+     1. Find and then download the corrosponding compressed package from this URL https://nodejs.org/dist/ .
+     2. Extract files from it and rename the folder to `nodejs` (e.g. `node-v14.14.0-linux-x64` -> `nodejs`).
+     3. Move this dir into `/usr/local/src`.
    - **DO NOT USE NVM** that slows down zsh.
 3. [Ranger](https://github.com/ranger/ranger)
    - `~/.config/ranger`
 4. [Autojump](https://github.com/wting/autojump)
-   - After installation, **run** 
+   - After installation, **run**
+
 ```bash
 source /usr/share/autojump/autojump.zsh
 ```
+
 5. [Lazygit](https://github.com/jesseduffield/lazygit)
    - macOS: `~/Library/Application support/lazygit`
 
-#### Setup Environment 
+#### Setup Environment
 
 TL;DR: Put or link your executable files into `/usr/local/bin` instead of `usr/bin`
 
@@ -60,10 +69,10 @@ Environment location
 ### Extra
 
 1. [Alacritty](https://github.com/alacritty/alacritty)
-    - `~/.config/alacritty`
+   - `~/.config/alacritty`
 2. [alacritty-theme-switch](https://github.com/tichopad/alacritty-theme-switch): conveniently switch alacritty themes
-    1. install: `npm install -g alacritty-theme-switch`
-    2. usage: run `alacritty-theme-switch` or `ats`
+   1. install: `npm install -g alacritty-theme-switch`
+   2. usage: run `alacritty-theme-switch` or `ats`
 3. font: [ sauce-code-pro-nerd-font ](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
-    1. install
-        1. macOS: `brew tap homebrew/cask-fonts`, `brew install --cask font-sauce-code-pro-nerd-font`
+   1. install
+      1. macOS: `brew tap homebrew/cask-fonts`, `brew install --cask font-sauce-code-pro-nerd-font`
