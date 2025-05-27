@@ -28,7 +28,7 @@ fi
 # set default editor
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
-    alias vc="nvim ~/.config/nvim/init.vim"
+    alias vc="nvim ~/.config/nvim/init.lua"
     alias v="nvim"
 else
     echo "Please install nvim, visit this page (https://github.com/neovim/neovim/wiki/Installing-Neovim )"
