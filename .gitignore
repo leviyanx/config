@@ -30,10 +30,6 @@
 .config/*
 # zsh
 !.config/zsh/
-# Alacritty
-!.config/alacritty/
-# nvim
-!.config/nvim/
 # ranger
 !.config/ranger/
 .config/ranger/__pycache__
