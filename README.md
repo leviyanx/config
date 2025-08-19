@@ -7,6 +7,10 @@ tmux
 1. macos：在iterm2中才能正常使用
    - 设置：iterm2 - settings - profiles - 选择一个profile - keys - Option键Esc+
 
+[Nerd Font](https://www.nerdfonts.com/)
+   1. 推荐[hack字体](https://github.com/source-foundry/Hack)
+   2. 设置Terminal使用该字体
+
 ### How to use?
 
 #### Pull Config
@@ -73,6 +77,3 @@ Environment location
 2. [alacritty-theme-switch](https://github.com/tichopad/alacritty-theme-switch): conveniently switch alacritty themes
    1. install: `npm install -g alacritty-theme-switch`
    2. usage: run `alacritty-theme-switch` or `ats`
-3. font: [ sauce-code-pro-nerd-font ](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro)
-   1. install
-      1. macOS: `brew tap homebrew/cask-fonts`, `brew install --cask font-sauce-code-pro-nerd-font`
